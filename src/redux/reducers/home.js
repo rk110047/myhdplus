@@ -5,7 +5,10 @@ import {
     GET_CATEGORIES
 } from '../action-types/home';
 
-const initial_state = {};
+const initial_state = {
+    isLoading:true,
+    channels:[]
+};
 
 export default (state = initial_state, { type, payload}) => {
     switch(type) {

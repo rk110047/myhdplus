@@ -27,15 +27,7 @@ class LoginScreenComponent extends Component {
     this.setState({ [key]: val });
   };
 
-  userLogin = async (user) => {
-    const login = await this.props.login(user);
-    if(login === undefined) {
-      alert('please login again')
-      return false
-    }
-    AsyncStorage.setItem('api_token', login.payload.data.data.user.token);
-    this.props.navigation.navigate("Main")
-  }
+
 
   render() {
     return (
@@ -62,7 +54,7 @@ class LoginScreenComponent extends Component {
           />
           <TouchableOpacity
             style={styles.textInputBtn}
-            onPress={() => this.userLogin(this.state)}
+            onPress={() => this.props.login(this.state,this.props.navigation)}
           >
             <Text style={styles.btnText}>Login</Text>
           </TouchableOpacity>

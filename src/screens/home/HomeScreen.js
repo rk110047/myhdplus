@@ -11,31 +11,20 @@ import Videos from "../../SharedComponent/Videos/Videos";
 import Carousal from "../../SharedComponent/HorizontalCarousal/Carousal";
 import { getChannels, getVideos } from '../../redux/action-creators/home'
 
-const channels = [
-  { image: "https://www.multichannel.com/.image/t_share/MTYxMTE1MzI1NDk1MDU5OTcw/abc-logo.jpg" },
-  { image: require("../../../assets/imgs/channel.png") },
-  { image: require("../../../assets/imgs/channel.png") },
-  { image: require("../../../assets/imgs/channel.png") },
-  { image: require("../../../assets/imgs/channel.png") }
-];
 
 class HomeScreenComponent extends Component {
 
   componentDidMount = async () => {
-    console.log('channelsssss', this.props)
     const api_token = await AsyncStorage.getItem('api_token');
-    const renderChannels = await this.props.getChannels(api_token)
+     this.props.getChannels()
     const renderVideos = await this.props.getVideos(api_token)
-    console.log('needd', this.props.recVideos)
 }
   render() {
-    console.log('channelsssss', this.props.channels)
-    if(this.props.channels === undefined || this.props.recVideos === undefined){
+    if( !this.props.recVideos){
       return <Text>loading...</Text>
     }
     let channelsImages = []
-    this.props.channels.data.results.map(channel => channelsImages.push(channel.channel_image))
-    console.log('channelsssss', channelsImages)
+    this.props.channels.map(channel => channelsImages.push(channel.channel_image))
     return (
       <BaseScreen logo search>
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -61,7 +50,7 @@ class HomeScreenComponent extends Component {
                 <Text style={styles.titleBtn}>View All</Text>
               </TouchableOpacity>
             </View>
-            <Carousal channels={this.props.channels.data.results} />
+            <Carousal channels={this.props.channels} />
             <View style={styles.contentContainer}>
               <Text style={styles.titleText}>Popular Content</Text>
             </View>

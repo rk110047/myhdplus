@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text,ScrollView ,Image} from 'react-native';
 import {styles} from './Carousal.style';
 
-// const channels = ['1', '2', '3', '4', '5', '6', '7', '8'];
 
 class Carousal extends Component {
     channelsRow = () => {

@@ -3,7 +3,9 @@ import {
     USER_REGISTER
 } from '../action-types/auth';
 
-const initial_state = {};
+const initial_state = {
+    user:{}
+};
 
 export default (state = initial_state, { type, payload}) => {
     switch(type) {
