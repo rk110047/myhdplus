@@ -1,7 +1,6 @@
 import {USER_LOGIN, USER_REGISTER} from '../action-types/auth';
 import QueryUtil from '../../utils/QueryUtil';
 import AsyncStorage from '@react-native-community/async-storage';
-import {NavigationActions} from 'react-navigation';
 
 // the action creator to Register the user
 export const userRegister = user => async dispatch => {

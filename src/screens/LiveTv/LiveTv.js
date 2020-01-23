@@ -1,53 +1,25 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, TouchableHighlight, Image } from 'react-native';
 import BaseScreen from '../base/BaseScreen';
-import data from './JsonData';
 import { styles } from './LiveTv.style';
-
-
-const Navbar = [{ name: "Sports", status: true }, { name: "News", status: false }, { name: "Infotainment", status: false }, { name: "Drama", status: false }, { name: "Kids", status: false }, { name: "Fashion", status: false }];
+import { connect } from 'react-redux';
+import VideoListComponent from '../../components/VideoListComponent';
 
 class LiveTv extends Component {
-
-    state = {
-        navbar: []
-    }
-
-    componentWillMount = () => {
-        this.setState({ navbar: Navbar });
-    }
-
-
-    navClickHandler = (index, navItem) => {
-
-        const x = this.state.navbar.map((item) => {
-            if (item.name === navItem.name) {
-                return {
-                    ...item,
-                    status: true
-                }
-            } else {
-                return {
-                    ...item,
-                    status: false
-                }
-            }
-
-        })
-
-        this.setState({ navbar: x });
-        this.sportsList()
-
-    }
+constructor(props){
+    super(props)
+}
 
     navbarList = () => {
-        return Navbar.map((nav, i) => {
-            const navTextStyle = this.state.navbar[i].status == true ? styles.activeNavText : styles.navText;
-            const navbarStyle = this.state.navbar[i].status == true ? styles.activeNavbar : styles.navbar;
+        const {categories}=this.props
+        return categories && categories.map((nav, i) => {
+            const navTextStyle = categories[i].status == true ? styles.activeNavText : styles.navText;
+            const navbarStyle = categories[i].status == true ? styles.activeNavbar : styles.navbar;
             return (
-                <TouchableHighlight key={i} underlayColor='#212121' onPress={() => this.navClickHandler(i, nav)}>
+                <TouchableHighlight key={i} underlayColor='#212121' 
+                onPress={() => this.props.navClickHandler(nav.id)}>
                     <View style={navbarStyle}>
-                        <Text style={navTextStyle}>{nav.name}</Text>
+                        <Text style={navTextStyle}>{nav && nav.name}</Text>
                     </View>
                 </TouchableHighlight>
             )
@@ -56,27 +28,16 @@ class LiveTv extends Component {
 
 
     sportsList = () => {
-
-        const ITEM = this.state.navbar.filter((item) => {
-            if (item.status) {
-                return item;
-            }
-        })
-
-        let navName = ITEM[0].name;
-        return data[navName].map((sport, i) => {
+        const {categoryChannels}=this.props
+        return categoryChannels && categoryChannels.map((sport, i) => {
+            console.log("sport",sport)
             return (
-                <TouchableHighlight key={i} underlayColor='#212121' onPress={() => this.props.navigation.navigate('PlayVideo')}>
-                    <View style={styles.sportContainer}>
-                        <View style={styles.imageContainer}>
-                            <Image source={sport.image} style={styles.sportImage} />
-                        </View>
-                        <View style={styles.descriptionContainer}>
-                            <Text style={styles.titleText}>{sport.title}</Text>
-                            <Text style={styles.descriptionText}>{sport.description}</Text>
-                        </View>
-                    </View>
-                </TouchableHighlight>
+                <VideoListComponent
+                channel_image={sport.channel_image}
+                name={sport.name}
+                description={sport.description}
+                id={sport.id}
+                />
             )
         })
     }
@@ -100,6 +61,19 @@ class LiveTv extends Component {
         );
     }
 }
+function mapStateToProps(state) {
+    return{
+    categories:state.channels.categories,
+    channels:state.channels.channels,
+    categoryChannels:state.channels.channels.filter((item)=>item.category==state.channels.selectedCategoryId),
+    selectedCategoryId:state.channels.selectedCategoryId
 
-
-export { LiveTv };
+}
+}
+const mapDispatchToProps = dispatch => {
+    return {
+      // dispatching plain actions
+      navClickHandler: (id) => dispatch({ type: 'CHANGE_LIVETV_NAVIGATION_STATUS',payload:id }),
+     }
+  }
+export default connect(mapStateToProps,mapDispatchToProps)(LiveTv)

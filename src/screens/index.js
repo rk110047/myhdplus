@@ -2,7 +2,7 @@ import LoginScreenComponent from '../screens/auth/login/LoginScreen';
 import SignupScreenComponent  from '../screens/auth/signup/signup';
 import { SplashScreen, } from '../screens/splash/SplashScreen';
 import HomeScreenComponent from '../screens/home/HomeScreen';
-import { LiveTv } from '../screens/LiveTv/LiveTv';
+import  LiveTv  from '../screens/LiveTv/LiveTv';
 import { Radio } from '../screens/Radio/Radio';
 import { ArchiveTv } from '../screens/ArchiveTv/ArchiveTv';
 import { Notifications } from '../screens/Notifications/Notifications';

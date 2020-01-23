@@ -3,7 +3,8 @@ import {
     View,
     Image,
     Text,
-    Dimensions
+    Dimensions,
+    TouchableHighlight
 } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { styles } from './Header.style'
@@ -12,7 +13,6 @@ import headerLogo from '../../../assets/imgs/logo.png';
 import searchImg from '../../../assets/imgs/search.png';
 import toggleBtnImg from '../../../assets/imgs/toggleBtn.png';
 import arrow from '../../../assets/imgs/arrow.png';
-import { TouchableHighlight } from 'react-native-gesture-handler';
 
 const Header = (props) =>
     <View style={styles.container}>

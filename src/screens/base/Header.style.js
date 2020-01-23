@@ -7,7 +7,7 @@ const width = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 28,
+        // marginTop: 28,
         marginBottom: 15,
         paddingLeft: 14,
         paddingRight: 16,

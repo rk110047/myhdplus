@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { View, Image, Text, Dimensions, AsyncStorage } from "react-native";
+import { View, Image, Text, Dimensions, AsyncStorage,TouchableOpacity } from "react-native";
 
 // import { Video } from "expo-av";
 
 import BaseScreen from "../base/BaseScreen";
 import { styles } from "./HomeScreen.style";
-import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
+import {  ScrollView, FlatList } from "react-native-gesture-handler";
 import Videos from "../../SharedComponent/Videos/Videos";
 import Carousal from "../../SharedComponent/HorizontalCarousal/Carousal";
-import { getChannels, getVideos } from '../../redux/action-creators/home'
+import { getChannels, getVideos,getCategories } from '../../redux/action-creators/home'
+import VideoPlayer from "../../components/VideoPlayer";
+import VideoListComponent from "../../components/VideoListComponent";
 
 
 class HomeScreenComponent extends Component {
@@ -17,6 +19,7 @@ class HomeScreenComponent extends Component {
   componentDidMount = async () => {
     const api_token = await AsyncStorage.getItem('api_token');
      this.props.getChannels()
+     this.props.getCategories()
     const renderVideos = await this.props.getVideos(api_token)
 }
   render() {
@@ -29,20 +32,8 @@ class HomeScreenComponent extends Component {
       <BaseScreen logo search>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.container}>
-            <View style={styles.videoContainer}>
-              {/* <Video
-                // posterSource={require('../../../assets/imgs/maxresdefault.jpg')}
-                source={{
-                  uri: "http://175.45.180.30:5000/live/nhk_test/playlist.m3u8"
-                }}
-                resizeMode="cover"
-                // useNativeControls
-                // usePoster
-                // isLooping
-                shouldPlay={true}
-                style={styles.poster}
-                posterStyle={styles.poster}
-              /> */}
+            <View style={{flex:1,height:150,width:"100%"}}>
+              <VideoPlayer/>
             </View>
             <View style={styles.rowContainer}>
               <Text style={styles.titleText}>Popular channels</Text>
@@ -54,7 +45,14 @@ class HomeScreenComponent extends Component {
             <View style={styles.contentContainer}>
               <Text style={styles.titleText}>Popular Content</Text>
             </View>
-            <Videos videos={this.props.recVideos} />
+          <FlatList
+          data={this.props.archVideos}
+          renderItem={({ item }) => <VideoListComponent 
+          channel_image={item.channel_image}
+          name={item.name}
+          description={item.description}
+          id={item.id} />}
+          />
           </View>
         </ScrollView>
       </BaseScreen>
@@ -68,4 +66,4 @@ const mapStateToProps = (state) => ({
   archVideos: state.channels.archVideos
 });
 
-export default connect(mapStateToProps, {getChannels, getVideos})(HomeScreenComponent);
+export default connect(mapStateToProps, {getChannels, getVideos,getCategories})(HomeScreenComponent);

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {
   GET_CHANNELS,
   GET_RECOMMENDED_VIDEOS,
@@ -11,7 +10,6 @@ import QueryUtil from '../../utils/QueryUtil';
 export const getChannels = () => async dispatch => {
   QueryUtil.get('/channels/')
     .then(response => {
-      console.log('response in getting channels', response);
       if (response.status == 200)
         dispatch({type: GET_CHANNELS, payload: response.data.results});
     })
@@ -22,44 +20,33 @@ export const getChannels = () => async dispatch => {
 
 // the action creator to Login the user
 export const getVideos = token => async dispatch => {
-  const url =
-    'http://iptv-server-dev.us-west-2.elasticbeanstalk.com/api/v1/archives/';
-
-  try {
-    const getVideos = await axios.get(url, {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    let recVideos = [];
-    let arcVideo = [];
-    getVideos.data.results.map(video => {
-      if (video.video_type === 'VD') {
-        recVideos.push(video);
+  QueryUtil.get('/archives/')
+    .then(response => {
+      if (response.status == 200 && response.data.results) {
+        let recVideos = [];
+        let arcVideo = [];
+        response.data.results.map(video => {
+          if (video.video_type === 'VD') {
+            recVideos.push(video);
+          }
+          arcVideo.push(video);
+        });
+        dispatch({type: GET_RECOMMENDED_VIDEOS, payload: recVideos});
+        dispatch({type: GET_ARCHIVED_VIDEOS, payload: arcVideo});
       }
-      arcVideo.push(video);
+    })
+    .catch(err => {
+      console.log('error in getting channels', err);
     });
-    dispatch({type: GET_RECOMMENDED_VIDEOS, payload: recVideos});
-    dispatch({type: GET_ARCHIVED_VIDEOS, payload: arcVideo});
-  } catch (error) {
-    console.log('eraaa', error.response);
-  }
 };
-
 export const getCategories = token => async dispatch => {
-  const url =
-    'http://iptv-server-dev.us-west-2.elasticbeanstalk.com/api/v1/categories/';
-
-  try {
-    const getCategories = await axios.get(url, {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
+  QueryUtil.get('/categories/')
+    .then(response => {
+      if (response.status == 200) {
+        dispatch({type: GET_CATEGORIES, payload: response.data.results});
+      }
+    })
+    .catch(err => {
+      console.log('error in getting channels', err);
     });
-    dispatch({type: GET_CATEGORIES, payload: getCategories});
-  } catch (error) {
-    console.log('error', error);
-  }
 };

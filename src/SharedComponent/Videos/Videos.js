@@ -168,12 +168,10 @@ class Videos extends Component {
     }
 
     popularContent = () => {
-        console.log('here I am', this.props.videos)
 
         const video = this.props.videos
 
         return video.map((video, i) => {
-            console.log('here I am', this.props.videos)
             const message = 'This is the description'
             return (
                 <TouchableHighlight key={i} underlayColor='#212121' onPress={() => this.props.navigation.navigate('PlayVideo')}>

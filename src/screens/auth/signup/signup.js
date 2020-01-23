@@ -6,11 +6,12 @@ import {
     Button, 
     Image,
     TextInput,
-    KeyboardAvoidingView
+    KeyboardAvoidingView,
+    TouchableOpacity
 } from 'react-native';
 import {styles} from "./signup.style";
 import logo from '../../../../assets/imgs/iptv_logo.png';
-import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableHighlight } from 'react-native-gesture-handler';
 import { userRegister } from '../../../redux/action-creators/auth'
 
 class SignupScreenComponent extends Component {

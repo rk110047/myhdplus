@@ -7,13 +7,13 @@ import {
   Image,
   TextInput,
   KeyboardAvoidingView,
-  AsyncStorage
+  AsyncStorage,
+  TouchableOpacity
 } from "react-native";
 import { styles } from "./LoginScreen.style";
 import logo from "../../../../assets/imgs/iptv_logo.png";
 import {
-  TouchableHighlight,
-  TouchableOpacity
+  TouchableHighlight
 } from "react-native-gesture-handler";
 import { userLogin } from "../../../redux/action-creators/auth";
 
