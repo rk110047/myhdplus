@@ -1,21 +1,25 @@
 import React from 'react'
 import { TouchableOpacity,View,Text ,Image} from "react-native";
 import {styles} from "../screens/LiveTv/LiveTv.style"
-export default function VideoListComponent(props){
-    const {channel_image,name,description,id}=props
+import { withNavigation } from 'react-navigation';
+
+ function VideoListComponent(props){
+    const {channel_image,name,description,id,data}=props
     return(
-        <TouchableOpacity key={id} underlayColor='#212121' 
-                // onPress={() => this.props.navigation.navigate('PlayVideo')}
+        <TouchableOpacity key={data.id} underlayColor='#212121' 
+                onPress={() => props.navigation.navigate('VideoDetailsScreen',{data})}
                 >
                     <View style={styles.sportContainer}>
                         <View style={styles.imageContainer}>
-                            <Image source={{uri:channel_image}} style={styles.sportImage} />
+                            <Image source={{uri:data.channel_image}} style={styles.sportImage} />
                         </View>
                         <View style={styles.descriptionContainer}>
-                            <Text style={styles.titleText}>{name}</Text>
-                            <Text style={styles.descriptionText}>{description}</Text>
+                            <Text style={styles.titleText}>{data.name}</Text>
+                            <Text style={styles.descriptionText}>{data.description}</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
     )
 }
+export default withNavigation(VideoListComponent);
+

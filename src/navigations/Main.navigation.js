@@ -25,6 +25,7 @@ import ChangePassword from "../screens/ChangePassword/ChangePassword";
 import ChangePassword2 from "../screens/ChangePassword/ChangePassword2";
 import Success from "../screens/ChangePassword/Success";
 import PlayVideo from "../screens/PlayVideo/PlayVideo";
+import VideoDetailsScreen from "../screens/video/VideoDetailsScreen";
 
 // const MainNavigator = createDrawerNavigator(
 //     {
@@ -89,6 +90,9 @@ const DrawerStack = createDrawerNavigator({
   },
   PlayVideo:{
     screen:PlayVideo
+  },
+  VideoDetailsScreen:{
+    screen:VideoDetailsScreen
   }
 
 },

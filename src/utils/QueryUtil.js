@@ -10,7 +10,7 @@ export default class QueryUtil {
        return header
     }
     static base_url ="http://iptv-server-dev.us-west-2.elasticbeanstalk.com/api/v1"
-
+    
      static getWithoutToken=(path)=>{
         return axios.get(QueryUtil.base_url + path)
     }
