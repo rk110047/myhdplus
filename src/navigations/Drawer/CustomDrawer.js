@@ -119,7 +119,7 @@ export default class CustomDrawer extends Component {
             <TouchableOpacity activeOpacity={1} style={styles.container}>
                 <ScrollView>
                     <View style={styles.logoContainer}>
-                        <Image source={require('../../../assets/imgs/logo2.png')} style={styles.logo}></Image>
+                        <Image source={require('../../../assets/imgs/logo.png')} style={styles.logo}></Image>
                     </View>
                     {this.renderData()}
                 </ScrollView>

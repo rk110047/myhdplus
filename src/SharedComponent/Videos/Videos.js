@@ -178,7 +178,7 @@ class Videos extends Component {
                     <View style={styles.popularContainer}>
                         <View style={styles.innerContainer}>
                             {/* <Video source={{url:video.video_url}} style={styles.videoImage} /> */}
-                            <Image source={require('../../../assets/imgs/video.png')} style={styles.playIcon} />
+                            <Image source={require('../../../assets/imgs/video.jpeg')} style={styles.playIcon} />
                         </View>
                         <View style={styles.descripContainer}>
                             <Text style={styles.title}>{video.name}</Text>

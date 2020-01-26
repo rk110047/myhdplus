@@ -34,6 +34,7 @@ export default class VideoPlayerComponent extends Component {
                 ? channel_url
                 : 'http://185.94.77.110/live/vamoshd.m3u8',
             }} // Can be a URL or a local file.
+            resizeMode="stretch"
             navigator={this.props.navigator}
             fullscreen={true}
             fullscreenOrientation="landscape"
@@ -44,6 +45,7 @@ export default class VideoPlayerComponent extends Component {
             disableBack={
               this.props.disableBack ? this.props.disableBack : false
             }
+            onEnterFullscreen={()=>console.log("full Screen")}
             onBuffer={() => {
               console.log('buffer');
             }} // Callback when remote video is buffering
@@ -64,7 +66,5 @@ let styles = StyleSheet.create({
     top: 0,
     left: 0,
     bottom: 0,
-    right: 0,
-    width: '100%',
-  },
+    right: 0  },
 });

@@ -16,7 +16,6 @@ class VideoOnDemand extends Component {
     renderData = () => {
         return categories.map((category, i) => {
             return (
-                <TouchableHighlight key={i} underlayColor='#212121' onPress={() => this.onPressHandler()}>
                     <View style={styles.categoryContainer}>
                         <View style={styles.category}>
                             <ImageBackground
@@ -29,7 +28,6 @@ class VideoOnDemand extends Component {
                             </ImageBackground>
                         </View>
                     </View>
-                </TouchableHighlight>
             )
         })
     }

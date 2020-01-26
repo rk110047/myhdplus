@@ -29,6 +29,11 @@ export default (state = initial_state, {type, payload}) => {
         recVideos: payload,
       };
     case GET_ARCHIVED_VIDEOS:
+      let archivedResults=payload;
+      archivedResults && archivedResults.map((item)=>{
+        item.channel_image='https://www.rapidtvnews.com/images/2019/Mar_2019/Star-Sports-logo_6_March_2019.png'
+        item.channel_url=item.video_url
+      })
       return {
         ...state,
         archVideos: payload,

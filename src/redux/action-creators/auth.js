@@ -6,11 +6,13 @@ import AsyncStorage from '@react-native-community/async-storage';
 export const userRegister = user => async dispatch => {
   QueryUtil.postWithoutToken('/auth/register/', user)
     .then(response => {
-      if (response.status == 200) {
+      console.log("response in register",response)
+      if (response.status) {
         return dispatch({type: USER_REGISTER, payload: response.data});
       }
     })
     .catch(err => {
+      alert(err.toString())
       console.log('error', err);
     });
 };
@@ -28,6 +30,7 @@ export const userLogin = (user, navigation) => async dispatch => {
       }
     })
     .catch(err => {
+      alert(err.toString())
       console.log('error', err);
     });
 };

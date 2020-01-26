@@ -28,6 +28,7 @@ class SignupScreenComponent extends Component {
     userRegister = async (user) => {
       console.log('user', user)
       const register = await this.props.register(user)
+      console.log("register",register)
       this.props.navigation.navigate('Login')
     } 
 

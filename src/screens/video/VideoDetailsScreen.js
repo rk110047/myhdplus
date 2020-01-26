@@ -49,7 +49,6 @@ import {styles} from '../LiveTv/LiveTv.style';
           categoryChannels.map((sport, i) => {
             return <VideoListComponent 
             onPressVideo={()=>{
-                console.log("onPressVideo",sport)
                 if(sport.id!==this.state.videoData.id){
                 this.setState({videoData:sport})
                 }
@@ -59,7 +58,6 @@ import {styles} from '../LiveTv/LiveTv.style';
         );
       };
     render() {
-        console.log("datttta",this.state)
         return (
             <BaseScreen arrow={true} logo={true} search={true}>
 
@@ -73,7 +71,13 @@ import {styles} from '../LiveTv/LiveTv.style';
             <View style={{flex:2}}>
             <Text style={styles.titleText}>Popular channels</Text>
 
-            <Carousal channels={this.props.channels} />
+            <Carousal 
+            onPressVideo={(sport)=>{
+              if(sport.id!==this.state.videoData.id){
+              this.setState({videoData:sport})
+              }
+          }}
+            channels={this.props.channels} />
             <View style={styles.navContainer}>
             <ScrollView
               horizontal={true}
@@ -94,8 +98,6 @@ import {styles} from '../LiveTv/LiveTv.style';
 
 const mapStateToProps = state => ({
     channels: state.channels.channels,
-    recVideos: state.channels.recVideos,
-    archVideos: state.channels.archVideos,
     categories: state.channels.categories,
     categoryChannels: state.channels.channels.filter(
       item => item.category == state.channels.selectedCategoryId,
@@ -105,7 +107,6 @@ const mapStateToProps = state => ({
   });
   const mapDispatchToProps = dispatch => {
     return {
-      // dispatching plain actions
       navClickHandler: id =>
         dispatch({type: 'CHANGE_LIVETV_NAVIGATION_STATUS', payload: id}),
     };
