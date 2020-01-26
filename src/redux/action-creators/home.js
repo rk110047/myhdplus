@@ -8,7 +8,7 @@ import QueryUtil from '../../utils/QueryUtil';
 
 // the action creator to get the channels.
 export const getChannels = () => async dispatch => {
-  QueryUtil.get('/channels/')
+  QueryUtil.get('/livetv/channels/')
     .then(response => {
       if (response.status == 200)
         dispatch({type: GET_CHANNELS, payload: response.data.results});
@@ -40,7 +40,7 @@ export const getVideos = token => async dispatch => {
     });
 };
 export const getCategories = token => async dispatch => {
-  QueryUtil.get('/categories/')
+  QueryUtil.get('/livetv/categories/')
     .then(response => {
       if (response.status == 200) {
         dispatch({type: GET_CATEGORIES, payload: response.data.results});

@@ -35,23 +35,27 @@ const List = [
         image: require('../../../assets/imgs/recordedVideo.png'),
         name: 'Recorded Video',
         screen:'RecordedVideo'
-    }, {
-        image: require('../../../assets/imgs/notifications.png'),
-        name: 'Notifications',
-        screen:'Notifications'
-    }, {
-        image: require('../../../assets/imgs/support.png'),
-        name: 'Support',
-        screen:'Support'
-    }, {
-        image: require('../../../assets/imgs/settings.png'),
-        name: 'Settings',
-        screen:'Settings'
-    }, {
-        image: require('../../../assets/imgs/about.png'),
-        name: 'About',
-        screen:'About'
-    }
+    }, 
+    // {
+    //     image: require('../../../assets/imgs/notifications.png'),
+    //     name: 'Notifications',
+    //     screen:'Notifications'
+    // },
+    //  {
+    //     image: require('../../../assets/imgs/support.png'),
+    //     name: 'Support',
+    //     screen:'Support'
+    // }, 
+    // {
+    //     image: require('../../../assets/imgs/settings.png'),
+    //     name: 'Settings',
+    //     screen:'Settings'
+    // }, 
+    // {
+    //     image: require('../../../assets/imgs/about.png'),
+    //     name: 'About',
+    //     screen:'About'
+    // }
 ]
 export default class CustomDrawer extends Component {
 

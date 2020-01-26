@@ -9,7 +9,7 @@ const SplashSwitchNavigator = createSwitchNavigator({
     Main: MainNavigator,
     Splash: SplashScreen,
 }, {
-    initialRouteName: 'Auth',
+    initialRouteName: 'Splash',
     headerMode: 'none',
 })
 

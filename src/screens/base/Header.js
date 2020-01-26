@@ -24,8 +24,8 @@ const Header = (props) =>
                 <Image source={toggleBtnImg} style={styles.image} />
             </TouchableHighlight>}
         {props.logo && <Image source={headerLogo} style={styles.logo} />}
-        {props.search && <Image source={searchImg} style={styles.image} />}
-
+        {/* {props.search && <Image source={searchImg} style={styles.image} />} */}
+            <View></View>
         {props.centerText &&
             <View style={styles.textContainer}>
                 <Text style={styles.text}>{props.centerText}</Text>

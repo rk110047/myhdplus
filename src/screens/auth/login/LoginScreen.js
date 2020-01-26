@@ -3,18 +3,13 @@ import { connect } from 'react-redux';
 import {
   Text,
   View,
-  Button,
   Image,
   TextInput,
   KeyboardAvoidingView,
-  AsyncStorage,
   TouchableOpacity
 } from "react-native";
 import { styles } from "./LoginScreen.style";
 import logo from "../../../../assets/imgs/iptv_logo.png";
-import {
-  TouchableHighlight
-} from "react-native-gesture-handler";
 import { userLogin } from "../../../redux/action-creators/auth";
 
 class LoginScreenComponent extends Component {

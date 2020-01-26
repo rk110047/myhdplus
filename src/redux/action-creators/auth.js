@@ -19,7 +19,7 @@ export const userRegister = user => async dispatch => {
 export const userLogin = (user, navigation) => async dispatch => {
   QueryUtil.postWithoutToken('/auth/login/', user)
     .then(response => {
-      if (response.status == 200) {
+      if (response && response.data && response.status == 200) {
         AsyncStorage.setItem('api_token', response.data.data.user.token);
         navigation.navigate('Main');
         dispatch({type: USER_LOGIN, payload: response.data});

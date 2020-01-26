@@ -99,10 +99,10 @@ const DrawerStack = createDrawerNavigator({
   {
     drawerBackgroundColor: '#212121',
     initialRouteName: 'HomeScreen',
-    drawerWidth: width * 0.7,
+    drawerWidth: width * 0.6,
     hideStatusBar: true,
     contentComponent: CustomDrawer,
-    overlayColor: '#FAF2C8',
+    // overlayColor: '#FAF2C8',
     unmountInactiveRoutes:true,
     contentOptions: {
       activeTintColor: '#FFC200',

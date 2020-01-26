@@ -99,7 +99,7 @@ class ArchiveTv extends Component {
   render() {
     return (
       <BaseScreen logo={true} search={true}>
-        <View style={styles.container}>
+        {/* <View style={styles.container}>
           <View style={styles.navContainer}>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               {this.navbarList(Navbar, 'navbar')}
@@ -116,7 +116,7 @@ class ArchiveTv extends Component {
           <ScrollView showsVerticalScrollIndicator={false} style={{ marginVertical: 20 }}>
             {this.List()}
           </ScrollView>
-        </View>
+        </View> */}
       </BaseScreen>
     );
   }

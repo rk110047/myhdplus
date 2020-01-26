@@ -1,26 +1,114 @@
 import React, { Component } from 'react'
-import {View,Text} from "react-native"
+import {View,Text,StyleSheet,ScrollView,TouchableHighlight} from "react-native"
 import BaseScreen from '../base/BaseScreen'
-import VideoPlayer from '../../components/VideoPlayer'
+import VideoPlayerComponent from '../../components/VideoPlayerComponent'
+import Carousal from '../../SharedComponent/HorizontalCarousal/Carousal'
+import {connect} from 'react-redux';
+import VideoListComponent from '../../components/VideoListComponent'
+import {styles} from '../LiveTv/LiveTv.style';
 
-export default class VideoDetailsScreen extends Component {
+ class VideoDetailsScreen extends Component {
     constructor(props){
         super(props)
-        this.data={}
+        this.state={
+            videoData:{}
+        }
     }
     componentDidMount(){
-       this.data= this.props.navigation.getParam("data")
-       console.log("data",this.data)
+        this.setState({
+            videoData:this.props.navigation.getParam("data")
+        })
     }
-    render() {
+    navbarList = () => {
+        const {categories} = this.props;
         return (
-            <BaseScreen logo={true} search={true}>
+          categories &&
+          categories.map((nav, i) => {
+            const navTextStyle =
+              categories[i].status == true ? styles.activeNavText : styles.navText;
+            const navbarStyle =
+              categories[i].status == true ? styles.activeNavbar : styles.navbar;
+            return (
+              <TouchableHighlight
+                key={i}
+                underlayColor="#212121"
+                onPress={() => this.props.navClickHandler(nav.id)}>
+                <View style={navbarStyle}>
+                  <Text style={navTextStyle}>{nav && nav.name}</Text>
+                </View>
+              </TouchableHighlight>
+            );
+          })
+        );
+      };
+
+      sportsList = () => {
+        const {categoryChannels} = this.props;
+        return (
+          categoryChannels &&
+          categoryChannels.map((sport, i) => {
+            return <VideoListComponent 
+            onPressVideo={()=>{
+                console.log("onPressVideo",sport)
+                if(sport.id!==this.state.videoData.id){
+                this.setState({videoData:sport})
+                }
+            }}
+            data={sport} />;
+          })
+        );
+      };
+    render() {
+        console.log("datttta",this.state)
+        return (
+            <BaseScreen arrow={true} logo={true} search={true}>
 
             <View style={{flex:1}}>
-                <VideoPlayer url={this.data.video_url}/>
+                <VideoPlayerComponent
+                disableTimer={true}
+                navigator={this.props.navigation}
+                disableBack={true}
+                data={this.state.videoData}/>
             </View>
-            <View style={{flex:2,borderWidth:2,borderColor:"white"}}></View>
+            <View style={{flex:2}}>
+            <Text style={styles.titleText}>Popular channels</Text>
+
+            <Carousal channels={this.props.channels} />
+            <View style={styles.navContainer}>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}>
+              {this.navbarList()}
+            </ScrollView>
+          </View>
+          <ScrollView>
+            <View style={styles.sportList}>{this.sportsList()}</View>
+          </ScrollView>
+        
+      
+            </View>
             </BaseScreen>
         )
     }
 }
+
+const mapStateToProps = state => ({
+    channels: state.channels.channels,
+    recVideos: state.channels.recVideos,
+    archVideos: state.channels.archVideos,
+    categories: state.channels.categories,
+    categoryChannels: state.channels.channels.filter(
+      item => item.category == state.channels.selectedCategoryId,
+    ),
+    selectedCategoryId: state.channels.selectedCategoryId,
+  
+  });
+  const mapDispatchToProps = dispatch => {
+    return {
+      // dispatching plain actions
+      navClickHandler: id =>
+        dispatch({type: 'CHANGE_LIVETV_NAVIGATION_STATUS', payload: id}),
+    };
+  };
+  export default connect(mapStateToProps, mapDispatchToProps)(VideoDetailsScreen);
+  

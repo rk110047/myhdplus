@@ -19,9 +19,10 @@ class SplashScreenComponent extends Component {
     }
 
     loadApp = async() => {
-            console.log("inner")
-            const userToken = await AsyncStorage.getItem('token');
-            this.props.navigation.navigate(false ? "Main" : "Auth");
+        console.log("inside")
+            const userToken = await AsyncStorage.getItem('api_token');
+            console.log("userToken",userToken)
+            this.props.navigation.navigate(userToken ? "Main" : "Auth");
     }
 
     render() {

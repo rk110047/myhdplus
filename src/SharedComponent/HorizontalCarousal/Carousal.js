@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
-import { View, Text,ScrollView ,Image} from 'react-native';
+import { View, Text,ScrollView ,Image, TouchableOpacity} from 'react-native';
 import {styles} from './Carousal.style';
+import { withNavigation } from 'react-navigation';
 
 
-class Carousal extends Component {
-    channelsRow = () => {
-        return this.props.channels.map((channel, i) => {
+function Carousal(props) {
+    const channelsRow = () => {
+        return props.channels && props.channels.map((channel, i) => {
             return (
-                <View key={i} style={styles.channel}>
+                <TouchableOpacity
+                onPress={() => props.navigation.navigate('VideoDetailsScreen',{data:channel})}
+
+                key={i} style={styles.channel}>
                     <Image source={{uri:channel.channel_image}} style={styles.image} />
-                </View>
+                </TouchableOpacity>
             )
         })
     }
 
-    render() {
         return (
             <View style={styles.channelContainer}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    {this.channelsRow()}
+                    {channelsRow()}
                 </ScrollView>
             </View>
-        );
-    }
+        )
 }
 
 
-export default Carousal;
+export default withNavigation(Carousal);
