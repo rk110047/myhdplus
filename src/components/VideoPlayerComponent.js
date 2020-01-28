@@ -33,8 +33,13 @@ export default class VideoPlayerComponent extends Component {
               uri: channel_url
                 ? channel_url
                 : 'http://185.94.77.110/live/vamoshd.m3u8',
-            }} // Can be a URL or a local file.
+            }}
+            // Can be a URL or a local file.
             resizeMode="stretch"
+            toggleResizeModeOnFullscreen={true}
+            mute={false}
+            volume={1}
+            audioOnly={true}
             navigator={this.props.navigator}
             fullscreen={true}
             fullscreenOrientation="landscape"
@@ -42,17 +47,16 @@ export default class VideoPlayerComponent extends Component {
             disableTimer={
               this.props.disableTimer ? this.props.disableTimer : false
             }
+            disableSeekbar={
+              this.props.disableSeekbar ? this.props.disableSeekbar : false
+            }
             disableBack={
               this.props.disableBack ? this.props.disableBack : false
             }
-            onEnterFullscreen={()=>console.log("full Screen")}
-            onBuffer={() => {
-              console.log('buffer');
-            }} // Callback when remote video is buffering
-            onReadyForDisplay={()=>KeepAwake.activate()}
-            onError={error =>{
-              console.log("Error in running",error)
-              KeepAwake.deactivate()}} // Callback when video cannot be loaded
+            onReadyForDisplay={() => KeepAwake.activate()}
+            onError={error => {
+              KeepAwake.deactivate();
+            }} // Callback when video cannot be loaded
             style={styles.backgroundVideo}
           />
         </View>
@@ -66,5 +70,6 @@ let styles = StyleSheet.create({
     top: 0,
     left: 0,
     bottom: 0,
-    right: 0  },
+    right: 0,
+  },
 });

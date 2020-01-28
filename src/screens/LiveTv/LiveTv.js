@@ -48,13 +48,14 @@ class LiveTv extends Component {
     return (
       <BaseScreen logo={true} search={true}>
         <View style={styles.container}>
-          <View style={styles.navContainer}>
+          {/* <View style={styles.navContainer}> */}
             <ScrollView
+            contentContainerStyle={styles.navContainer}
               horizontal={true}
               showsHorizontalScrollIndicator={false}>
               {this.navbarList()}
             </ScrollView>
-          </View>
+          {/* </View> */}
           <ScrollView>
             <View style={styles.sportList}>{this.sportsList()}</View>
           </ScrollView>

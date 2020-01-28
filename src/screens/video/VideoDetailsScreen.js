@@ -59,13 +59,14 @@ import {styles} from '../LiveTv/LiveTv.style';
       };
     render() {
         return (
-            <BaseScreen arrow={true} logo={true} search={true}>
+            <BaseScreen logo={true} search={true}>
 
             <View style={{flex:1}}>
                 <VideoPlayerComponent
                 disableTimer={true}
                 navigator={this.props.navigation}
-                disableBack={true}
+                // disableBack={true}
+                disableSeekbar={true}
                 data={this.state.videoData}/>
             </View>
             <View style={{flex:2}}>
@@ -78,13 +79,14 @@ import {styles} from '../LiveTv/LiveTv.style';
               }
           }}
             channels={this.props.channels} />
-            <View style={styles.navContainer}>
+            {/* <View style={styles.navContainer}> */}
             <ScrollView
+            contentContainerStyle={styles.navContainer}
               horizontal={true}
               showsHorizontalScrollIndicator={false}>
               {this.navbarList()}
             </ScrollView>
-          </View>
+          {/* </View> */}
           <ScrollView>
             <View style={styles.sportList}>{this.sportsList()}</View>
           </ScrollView>

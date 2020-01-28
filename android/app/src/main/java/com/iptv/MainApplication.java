@@ -1,4 +1,4 @@
-package com.iptv;
+package com.leanvia;
 
 import android.app.Application;
 import android.content.Context;

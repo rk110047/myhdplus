@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.iptv"
+        applicationId "com.leanvia"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {
-  View,
-  
+  View,  
   Text,
   AsyncStorage,
-  TouchableOpacity,
 } from 'react-native';
 import BaseScreen from '../base/BaseScreen';
 import {styles} from './HomeScreen.style';
@@ -42,9 +40,12 @@ class HomeScreenComponent extends Component {
               <VideoPlayerComponent 
               disableTimer={true}
               disableBack={true}
-              data={{channel_url: "http://185.94.77.110/live/5star.m3u8",
-            channel_image: "https://www.rapidtvnews.com/images/2019/Mar_2019/Star-Sports-logo_6_March_2019.png",
-           }}/>
+              data={
+            {
+                  channel_url: "http://185.94.77.110/live/antena3-hd.mp4",
+                  channel_image: "https://www.rapidtvnews.com/images/2019/Mar_2019/Star-Sports-logo_6_March_2019.png",
+           }
+           }/>
             </View>
             <View style={styles.rowContainer}>
               <Text style={styles.titleText}>Popular channels</Text>

@@ -14,16 +14,18 @@ import { userLogin } from "../../../redux/action-creators/auth";
 
 class LoginScreenComponent extends Component {
   state = {
-    // email: "test1@gmail.com",
-    // password: "test12345678"
-    email:'',
-    password:''
+    email: "test1@gmail.com",
+    password: "test12345678"
+    // email:'',
+    // password:''
   };
 
   onChangeText = (key, val) => {
     this.setState({ [key]: val });
   };
+// onPressLogin=()=>{
 
+// }
 
 
   render() {
