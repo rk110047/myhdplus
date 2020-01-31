@@ -23,9 +23,14 @@ class LoginScreenComponent extends Component {
   onChangeText = (key, val) => {
     this.setState({ [key]: val });
   };
-// onPressLogin=()=>{
-
-// }
+onPressLogin=()=>{
+if(!this.state.email)
+alert("please enter email")
+else if(!this.state.password)
+alert("please enter password")
+else
+this.props.login(this.state,this.props.navigation)
+ }
 
 
   render() {
@@ -53,7 +58,7 @@ class LoginScreenComponent extends Component {
           />
           <TouchableOpacity
             style={styles.textInputBtn}
-            onPress={() => this.props.login(this.state,this.props.navigation)}
+            onPress={this.onPressLogin}
           >
             <Text style={styles.btnText}>Login</Text>
           </TouchableOpacity>

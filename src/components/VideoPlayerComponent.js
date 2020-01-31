@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import VideoPlayer from 'react-native-video-controls';
-
 import {View, StyleSheet, Dimensions, ActivityIndicator} from 'react-native';
 import KeepAwake from 'react-native-keep-awake';
+import Orientation from 'react-native-orientation-locker';
 
 const {width, height} = Dimensions.get('window');
 export default class VideoPlayerComponent extends Component {
@@ -50,6 +50,12 @@ export default class VideoPlayerComponent extends Component {
             disableSeekbar={
               this.props.disableSeekbar ? this.props.disableSeekbar : false
             }
+            onEnterFullscreen={()=>{
+              this.props.changeHeight(width,true)
+              Orientation.lockToLandscapeLeft()}}
+            onExitFullscreen={()=>{
+              this.props.changeHeight(200,false)
+              Orientation.unlockAllOrientations()}}
             disableBack={
               this.props.disableBack ? this.props.disableBack : false
             }

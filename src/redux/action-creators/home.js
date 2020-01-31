@@ -8,7 +8,7 @@ import QueryUtil from '../../utils/QueryUtil';
 
 // the action creator to get the channels.
 export const getChannels = () => async dispatch => {
-  QueryUtil.get('/livetv/channels/')
+  QueryUtil.get('/livetv/channels?limit=100')
     .then(response => {
       if (response.status == 200)
         dispatch({type: GET_CHANNELS, payload: response.data.results});

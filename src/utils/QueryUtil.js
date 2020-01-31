@@ -16,20 +16,16 @@ export default class QueryUtil {
     }
 
      static postWithoutToken=(path, payload)=> {
-         console.log("urllll",QueryUtil.base_url + path)
         return axios.post(QueryUtil.base_url + path, payload);
     }
 
      static get=async (path)=> {
         let headers=await QueryUtil.getHeader();
-        console.log("headers",headers,"url",QueryUtil.base_url + path)
         return axios.get(QueryUtil.base_url + path,{headers:headers})
     }
 
      static post=async(path, payload)=> {
         let headers=await QueryUtil.getHeader();
-        console.log("headers",headers,"url",QueryUtil.base_url + path)
-
         return axios.post(QueryUtil.base_url + path, payload,{headers:headers});
     }
 

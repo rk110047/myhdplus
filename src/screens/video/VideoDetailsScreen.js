@@ -11,7 +11,9 @@ import {styles} from '../LiveTv/LiveTv.style';
     constructor(props){
         super(props)
         this.state={
-            videoData:{}
+            videoData:{},
+            videoHeight:200,
+            hideHeader:false
         }
     }
     componentDidMount(){
@@ -59,15 +61,18 @@ import {styles} from '../LiveTv/LiveTv.style';
       };
     render() {
         return (
-            <BaseScreen logo={true} search={true}>
+            <BaseScreen 
+            hideHeader={this.state.hideHeader}
+            logo={true} search={true}>
 
-            <View style={{flex:1}}>
+            <View style={{height:this.state.videoHeight}}>
                 <VideoPlayerComponent
                 disableTimer={true}
                 navigator={this.props.navigation}
-                // disableBack={true}
                 disableSeekbar={true}
-                data={this.state.videoData}/>
+                data={this.state.videoData}
+                changeHeight={(videoHeight,hideHeader)=>{this.setState({videoHeight,hideHeader})}}
+                />
             </View>
             <View style={{flex:2}}>
             <Text style={styles.titleText}>Popular channels</Text>
@@ -79,14 +84,13 @@ import {styles} from '../LiveTv/LiveTv.style';
               }
           }}
             channels={this.props.channels} />
-            {/* <View style={styles.navContainer}> */}
+            <View style={styles.navContainer}>
             <ScrollView
-            contentContainerStyle={styles.navContainer}
               horizontal={true}
               showsHorizontalScrollIndicator={false}>
               {this.navbarList()}
             </ScrollView>
-          {/* </View> */}
+          </View>
           <ScrollView>
             <View style={styles.sportList}>{this.sportsList()}</View>
           </ScrollView>

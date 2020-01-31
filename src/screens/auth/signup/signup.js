@@ -25,11 +25,18 @@ class SignupScreenComponent extends Component {
       this.setState({ [key]: val });
     };
 
-    userRegister = async (user) => {
-      console.log('user', user)
-      const register = await this.props.register(user)
-      console.log("register",register)
-      this.props.navigation.navigate('Login')
+    userRegister = async () => {
+        if(!this.state.email)
+        alert("please enter email")
+        else if(!this.state.password)
+        alert("please enter password")
+        else if(!this.state.confirmed_password)
+        alert("please re-enter password")
+        else{
+          const register = await this.props.register(this.state)
+          if(register)
+          this.props.navigation.navigate('Login')
+        }
     } 
 
     render() {
@@ -65,7 +72,7 @@ class SignupScreenComponent extends Component {
                 onChangeText={val => this.onChangeText("confirmed_password", val)}
               />
               <TouchableOpacity style={styles.textInputBtn}
-              onPress={() => this.userRegister(this.state)}
+              onPress={this.userRegister}
               >
                 <Text style={styles.btnText}>Register</Text>
               </TouchableOpacity>

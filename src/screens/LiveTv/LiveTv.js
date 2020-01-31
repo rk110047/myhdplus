@@ -12,7 +12,7 @@ class LiveTv extends Component {
 
   navbarList = () => {
     const {categories} = this.props;
-    return (
+  return (
       categories &&
       categories.map((nav, i) => {
         const navTextStyle =
@@ -23,7 +23,8 @@ class LiveTv extends Component {
           <TouchableHighlight
             key={i}
             underlayColor="#212121"
-            onPress={() => this.props.navClickHandler(nav.id)}>
+            onPress={() => this.props.navClickHandler(nav.id)}
+            >
             <View style={navbarStyle}>
               <Text style={navTextStyle}>{nav && nav.name}</Text>
             </View>
@@ -38,7 +39,6 @@ class LiveTv extends Component {
     return (
       categoryChannels &&
       categoryChannels.map((sport, i) => {
-        console.log('sport', sport);
         return <VideoListComponent data={sport} />;
       })
     );
@@ -48,14 +48,14 @@ class LiveTv extends Component {
     return (
       <BaseScreen logo={true} search={true}>
         <View style={styles.container}>
-          {/* <View style={styles.navContainer}> */}
+          <View style={[styles.navContainer]}>
             <ScrollView
-            contentContainerStyle={styles.navContainer}
               horizontal={true}
-              showsHorizontalScrollIndicator={false}>
+              showsHorizontalScrollIndicator={false}
+              >
               {this.navbarList()}
             </ScrollView>
-          {/* </View> */}
+          </View>
           <ScrollView>
             <View style={styles.sportList}>{this.sportsList()}</View>
           </ScrollView>

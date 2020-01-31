@@ -16,13 +16,21 @@ import {
 } from '../../redux/action-creators/home';
 import VideoPlayerComponent from '../../components/VideoPlayerComponent';
 import VideoListComponent from '../../components/VideoListComponent';
+import Orientation from 'react-native-orientation-locker';
 
 class HomeScreenComponent extends Component {
+  constructor(props){
+    super(props)
+    this.state={videoHeight:200,
+    hideHeader:false
+    }
+  }
   componentDidMount = async () => {
     const api_token = await AsyncStorage.getItem('api_token');
     this.props.getChannels();
     this.props.getCategories();
     const renderVideos = await this.props.getVideos(api_token);
+    var initial = Orientation.getInitialOrientation();
   };
   render() {
     if (!this.props.recVideos) {
@@ -33,10 +41,12 @@ class HomeScreenComponent extends Component {
       channelsImages.push(channel.channel_image),
     );
     return (
-      <BaseScreen logo search>
+      <BaseScreen 
+      hideHeader={this.state.hideHeader}
+      logo search>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.container}>
-            <View style={{flex: 1, height: 200, width: '100%'}}>
+            <View style={{flex: 1, height: this.state.videoHeight, width: '100%'}}>
               <VideoPlayerComponent 
               disableTimer={true}
               disableBack={true}
@@ -45,7 +55,9 @@ class HomeScreenComponent extends Component {
                   channel_url: "http://185.94.77.110/live/antena3-hd.mp4",
                   channel_image: "https://www.rapidtvnews.com/images/2019/Mar_2019/Star-Sports-logo_6_March_2019.png",
            }
-           }/>
+           }
+           changeHeight={(videoHeight,hideHeader)=>{this.setState({videoHeight,hideHeader})}}
+           />
             </View>
             <View style={styles.rowContainer}>
               <Text style={styles.titleText}>Popular channels</Text>
