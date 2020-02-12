@@ -8,10 +8,9 @@ const width = Dimensions.get('window').width;
 const styles = StyleSheet.create({
     container: {
         // marginTop: 28,
-        marginBottom: 15,
-        paddingLeft: 14,
-        paddingRight: 16,
-        backgroundColor: 'transparent',
+        // marginBottom: 15,
+        
+        backgroundColor: '#d9d9d9',
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-between',

@@ -9,7 +9,7 @@ import {
   TouchableOpacity
 } from "react-native";
 import { styles } from "./LoginScreen.style";
-import logo from "../../../../assets/imgs/iptv_logo.png";
+import logo from "../../../../assets/imgs/iptv_logo.jpg";
 import { userLogin } from "../../../redux/action-creators/auth";
 
 class LoginScreenComponent extends Component {

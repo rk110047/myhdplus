@@ -3,6 +3,7 @@ import {
   GET_RECOMMENDED_VIDEOS,
   GET_ARCHIVED_VIDEOS,
   GET_CATEGORIES,
+  GET_HOME_SETTINGS,
 } from '../action-types/home';
 import QueryUtil from '../../utils/QueryUtil';
 
@@ -50,3 +51,15 @@ export const getCategories = token => async dispatch => {
       console.log('error in getting channels', err);
     });
 };
+export const getHomeSettings = () => async dispatch => {
+  QueryUtil.get('/settings/home/')
+    .then(response => {
+      console.log("response",response)
+      if (response.status == 200) {
+        dispatch({type: GET_HOME_SETTINGS, payload: response.data.results});
+      }
+    })
+    .catch(err => {
+      console.log('error in getting channels', err);
+    });
+}; 

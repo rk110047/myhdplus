@@ -104,7 +104,8 @@ export default class CustomDrawer extends Component {
             const textStyle = this.state.active[i] === 'true' ? [styles.listName, styles.activeListName] : styles.listName;
 
             return (
-                <TouchableHighlight key={i} onPress={() => this.clickHandler(i,list.screen)} underlayColor='#212121'>
+                <TouchableHighlight key={i} 
+                onPress={() => this.clickHandler(i,list.screen)} underlayColor='#212121'>
                     <View style={containerStyle}>
                         <Image source={list.image} style={imageStyle} resizeMode='contain' />
                         <Text style={textStyle}>{list.name}</Text>
@@ -116,14 +117,12 @@ export default class CustomDrawer extends Component {
 
     render() {
         return (
-            <TouchableOpacity activeOpacity={1} style={styles.container}>
-                <ScrollView>
-                    <View style={styles.logoContainer}>
+                <ScrollView style={{backgroundColor:"#072746"}}>
+                    <View style={[styles.logoContainer,{borderWidth:2}]}>
                         <Image source={require('../../../assets/imgs/logo.png')} style={styles.logo}></Image>
                     </View>
                     {this.renderData()}
                 </ScrollView>
-            </TouchableOpacity>
         );
     }
 }

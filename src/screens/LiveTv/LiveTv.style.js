@@ -10,16 +10,19 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         
+        
     },
     navbar: {
         marginHorizontal: 14,
         height: height * 0.06,
+        
     },
     activeNavbar: {
         marginHorizontal: 14,
         borderBottomWidth: 2,
         height: height * 0.06,
-        borderColor: '#FFC200'
+        borderColor: '#0d8ad2',
+        paddingBottom:15
     },
     navContainer: {
         display: 'flex',
@@ -27,18 +30,24 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         width: width,
-        marginHorizontal: 14
+        // marginHorizontal: 14,
+        marginBottom:15,
+        backgroundColor:"#d9d9d9",
+ 
 
     },
     navText: {
-        color: '#FFFFFF',
+        color: 'black',
         fontSize: 16,
-        fontWeight: 'normal'
+        fontWeight: 'normal',
+        marginHorizontal:5
     },
     activeNavText: {
         fontWeight: 'bold',
         fontSize: 18,
-        color: '#FFFFFF'
+        color: 'black',
+        marginHorizontal:5
+
     },
     sportContainer: {
         display: 'flex',

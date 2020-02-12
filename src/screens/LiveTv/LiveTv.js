@@ -22,7 +22,7 @@ class LiveTv extends Component {
         return (
           <TouchableHighlight
             key={i}
-            underlayColor="#212121"
+            underlayColor="#0d8ad2"
             onPress={() => this.props.navClickHandler(nav.id)}
             >
             <View style={navbarStyle}>
@@ -69,7 +69,7 @@ function mapStateToProps(state) {
     categories: state.channels.categories,
     channels: state.channels.channels,
     categoryChannels: state.channels.channels.filter(
-      item => item.category == state.channels.selectedCategoryId,
+      item => item.category[0] == state.channels.selectedCategoryId,
     ),
     selectedCategoryId: state.channels.selectedCategoryId,
   };

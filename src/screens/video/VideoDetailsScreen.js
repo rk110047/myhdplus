@@ -6,6 +6,7 @@ import Carousal from '../../SharedComponent/HorizontalCarousal/Carousal'
 import {connect} from 'react-redux';
 import VideoListComponent from '../../components/VideoListComponent'
 import {styles} from '../LiveTv/LiveTv.style';
+import EpgComponent from '../../components/common/EpgComponent'
 
  class VideoDetailsScreen extends Component {
     constructor(props){
@@ -61,6 +62,7 @@ import {styles} from '../LiveTv/LiveTv.style';
       };
     render() {
         return (
+          <ScrollView>
             <BaseScreen 
             hideHeader={this.state.hideHeader}
             logo={true} search={true}>
@@ -74,7 +76,10 @@ import {styles} from '../LiveTv/LiveTv.style';
                 changeHeight={(videoHeight,hideHeader)=>{this.setState({videoHeight,hideHeader})}}
                 />
             </View>
-            <View style={{flex:2}}>
+            <View style={{flex:2,paddingHorizontal:10}}>
+            <Text style={[styles.titleText,{marginVertical:15,fontSize:20}]}>{this.state.videoData.name}</Text>
+            <Text style={[styles.titleText,{marginBottom:8,fontSize:14}]}>{this.state.videoData.description}</Text>
+          <EpgComponent epgLink={this.state.videoData.EPG_file}/>
             <Text style={styles.titleText}>Popular channels</Text>
 
             <Carousal 
@@ -98,6 +103,7 @@ import {styles} from '../LiveTv/LiveTv.style';
       
             </View>
             </BaseScreen>
+            </ScrollView>
         )
     }
 }

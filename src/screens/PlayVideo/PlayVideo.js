@@ -74,7 +74,6 @@ class PlayVideo extends Component {
   };
 
   navbarList = () => {
-      console.log('cate', this.props.categories)
     const categories = this.props.categories.data.results
     return categories.map((nav, i) => {
       const navTextStyle =

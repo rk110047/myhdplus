@@ -10,7 +10,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import {styles} from "./signup.style";
-import logo from '../../../../assets/imgs/iptv_logo.png';
+import logo from '../../../../assets/imgs/iptv_logo.jpg';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import { userRegister } from '../../../redux/action-creators/auth'
 

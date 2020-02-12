@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     logo:{
         width:160,
         height:151,
+        resizeMode:"contain"
     },
     textInput: {
         backgroundColor: '#FFFFFF',

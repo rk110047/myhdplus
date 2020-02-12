@@ -4,6 +4,7 @@ import {
   GET_ARCHIVED_VIDEOS,
   GET_CATEGORIES,
   CHANGE_LIVETV_NAVIGATION_STATUS,
+  GET_HOME_SETTINGS,
 } from '../action-types/home';
 
 const initial_state = {
@@ -13,6 +14,7 @@ const initial_state = {
   archVideos: [],
   categories: [],
   selectedCategoryId: 1,
+  homeSettings:{}
 };
 
 export default (state = initial_state, {type, payload}) => {
@@ -68,6 +70,11 @@ export default (state = initial_state, {type, payload}) => {
         categories: newCategories,
         selectedCategoryId: payload,
       };
+      case GET_HOME_SETTINGS:
+        return{
+          ...state,
+          homeSettings:payload
+        }
     default:
       return state;
   }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import BaseScreen from '../base/BaseScreen';
 import { styles } from './About.style';
-import logo from '../../../assets/imgs/iptv_logo.png';
+import logo from '../../../assets/imgs/iptv_logo.jpg';
 
 class About extends Component {
 

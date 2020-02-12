@@ -12,16 +12,17 @@ const styles = StyleSheet.create({
         height:height*10/100,
          width: width*52/100,
          resizeMode:'contain',
+         marginVertical:30
     },
     logoContainer:{
-        marginVertical: height * 4 / 100,
         justifyContent: 'center',
+        backgroundColor:"#d9d9d9"
     },
     innerContainer: {
         flexDirection: 'row',
         display: 'flex',
         paddingVertical: height * 3 / 100,
-        marginHorizontal: width * 0.05,
+        marginHorizontal: width * 0.01,
         alignItems: 'center',
     },
     header: {

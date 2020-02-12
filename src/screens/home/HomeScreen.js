@@ -13,6 +13,7 @@ import {
   getChannels,
   getVideos,
   getCategories,
+  getHomeSettings
 } from '../../redux/action-creators/home';
 import VideoPlayerComponent from '../../components/VideoPlayerComponent';
 import VideoListComponent from '../../components/VideoListComponent';
@@ -29,10 +30,12 @@ class HomeScreenComponent extends Component {
     const api_token = await AsyncStorage.getItem('api_token');
     this.props.getChannels();
     this.props.getCategories();
+    this.props.getHomeSettings();
     const renderVideos = await this.props.getVideos(api_token);
     var initial = Orientation.getInitialOrientation();
-  };
+     };
   render() {
+    console.log("props",this.props.homeVideo)
     if (!this.props.recVideos) {
       return <Text>loading...</Text>;
     }
@@ -52,8 +55,8 @@ class HomeScreenComponent extends Component {
               disableBack={true}
               data={
             {
-                  channel_url: "http://185.94.77.110/live/antena3-hd.mp4",
-                  channel_image: "https://www.rapidtvnews.com/images/2019/Mar_2019/Star-Sports-logo_6_March_2019.png",
+                  channel_url: (this.props.homeVideo && this.props.homeVideo.home_page_url)?this.props.homeVideo.home_page_url:"http://185.94.77.110/live/antena3-hd.mp4",
+                  channel_image: (this.props.homeVideo && this.props.homeVideo.site_logo)?this.props.homeVideo.site_logo:"https://www.rapidtvnews.com/images/2019/Mar_2019/Star-Sports-logo_6_March_2019.png",
            }
            }
            changeHeight={(videoHeight,hideHeader)=>{this.setState({videoHeight,hideHeader})}}
@@ -84,10 +87,12 @@ const mapStateToProps = state => ({
   channels: state.channels.channels,
   recVideos: state.channels.recVideos,
   archVideos: state.channels.archVideos,
+  homeVideo:state.channels.homeSettings && state.channels.homeSettings[0]
 });
 
 export default connect(mapStateToProps, {
   getChannels,
   getVideos,
   getCategories,
+  getHomeSettings
 })(HomeScreenComponent);
