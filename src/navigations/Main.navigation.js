@@ -8,24 +8,21 @@ import {
   Support,
   Settings,
   About,
-  Radio
-} from "../screens";
-import React, { Component } from 'react';
-import { Dimensions } from 'react-native';
+  Radio,
+} from '../screens';
+import {Dimensions} from 'react-native';
 import CustomDrawer from './Drawer/CustomDrawer';
 
-import { createAppContainer } from 'react-navigation';
+import {createAppContainer} from 'react-navigation';
 
-import { createDrawerNavigator } from 'react-navigation-drawer';
+import {createDrawerNavigator} from 'react-navigation-drawer';
 
-import { createStackNavigator } from 'react-navigation-stack';
-import Videos from "../SharedComponent/Videos/Videos";
-import VideoScreen from "../SharedComponent/Screen/VideoScreen";
-import ChangePassword from "../screens/ChangePassword/ChangePassword";
-import ChangePassword2 from "../screens/ChangePassword/ChangePassword2";
-import Success from "../screens/ChangePassword/Success";
-import PlayVideo from "../screens/PlayVideo/PlayVideo";
-import VideoDetailsScreen from "../screens/video/VideoDetailsScreen";
+import VideoScreen from '../SharedComponent/Screen/VideoScreen';
+import ChangePassword from '../screens/ChangePassword/ChangePassword';
+import ChangePassword2 from '../screens/ChangePassword/ChangePassword2';
+import Success from '../screens/ChangePassword/Success';
+import PlayVideo from '../screens/PlayVideo/PlayVideo';
+import VideoDetailsScreen from '../screens/video/VideoDetailsScreen';
 
 // const MainNavigator = createDrawerNavigator(
 //     {
@@ -42,60 +39,59 @@ import VideoDetailsScreen from "../screens/video/VideoDetailsScreen";
 //     }
 // )
 
-
 const width = Dimensions.get('window').width;
 
-const DrawerStack = createDrawerNavigator({
-  HomeScreen: {
-    screen: HomeScreenComponent
+const DrawerStack = createDrawerNavigator(
+  {
+    HomeScreen: {
+      screen: HomeScreenComponent,
+    },
+    LiveTv: {
+      screen: LiveTv,
+    },
+    VideoOnDemand: {
+      screen: VideoOnDemand,
+    },
+    ArchiveTv: {
+      screen: ArchiveTv,
+    },
+    Radio: {
+      screen: Radio,
+    },
+    RecordedVideo: {
+      screen: RecordedVideo,
+    },
+    Notifications: {
+      screen: Notifications,
+    },
+    Support: {
+      screen: Support,
+    },
+    Settings: {
+      screen: Settings,
+    },
+    About: {
+      screen: About,
+    },
+    VideoScreen: {
+      screen: VideoScreen,
+    },
+    ChangePassword: {
+      screen: ChangePassword,
+    },
+    ChangePassword2: {
+      screen: ChangePassword2,
+    },
+    Success: {
+      screen: Success,
+    },
+    PlayVideo: {
+      screen: PlayVideo,
+    },
+    VideoDetailsScreen: {
+      screen: VideoDetailsScreen,
+    },
   },
-  LiveTv: {
-    screen: LiveTv
-  },
-  VideoOnDemand: {
-    screen: VideoOnDemand
-  },
-  ArchiveTv: {
-    screen: ArchiveTv
-  },
-  Radio: {
-    screen: Radio
-  },
-  RecordedVideo: {
-    screen: RecordedVideo
-  },
-  Notifications: {
-    screen: Notifications
-  },
-  Support: {
-    screen: Support
-  },
-  Settings: {
-    screen: Settings
-  },
-  About: {
-    screen: About
-  },
-  VideoScreen: {
-    screen: VideoScreen
-  },
-  ChangePassword: {
-    screen: ChangePassword
-  }, 
-  ChangePassword2: {
-    screen: ChangePassword2
-  },
-  Success:{
-    screen:Success
-  },
-  PlayVideo:{
-    screen:PlayVideo
-  },
-  VideoDetailsScreen:{
-    screen:VideoDetailsScreen
-  }
-
-},
   {
     drawerBackgroundColor: '#212121',
     initialRouteName: 'HomeScreen',
@@ -103,18 +99,15 @@ const DrawerStack = createDrawerNavigator({
     hideStatusBar: true,
     contentComponent: CustomDrawer,
     // overlayColor: '#FAF2C8',
-    unmountInactiveRoutes:true,
+    unmountInactiveRoutes: true,
     contentOptions: {
       activeTintColor: '#FFC200',
       // activeBackgroundColor: '#FFF2CB',
-      inactiveTintColor: '#FFFFFF'
+      inactiveTintColor: '#FFFFFF',
     },
-  }
+  },
 );
-
 
 const MainNavigator = createAppContainer(DrawerStack);
 
-
-
-export default MainNavigator
+export default MainNavigator;

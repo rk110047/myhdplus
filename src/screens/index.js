@@ -8,7 +8,7 @@ import { ArchiveTv } from '../screens/ArchiveTv/ArchiveTv';
 import { Notifications } from '../screens/Notifications/Notifications';
 import { Support } from '../screens/Support/Support';
 import { RecordedVideo } from '../screens/RecordedVideo/RecordedVideo';
-import { VideoOnDemand } from '../screens/VideoOnDemand/VideoOnDemand';
+import  VideoOnDemand  from '../screens/VideoOnDemand/VideoOnDemand';
 import { Settings } from '../screens/Settings/Settings';
 import { About } from '../screens/About/About';
 

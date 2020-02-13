@@ -50,12 +50,14 @@ import EpgComponent from '../../components/common/EpgComponent'
         return (
           categoryChannels &&
           categoryChannels.map((sport, i) => {
+            let is_adultCategoryArr=this.props.categories.filter((item)=>item.id==sport.category[0])
             return <VideoListComponent 
             onPressVideo={()=>{
                 if(sport.id!==this.state.videoData.id){
                 this.setState({videoData:sport})
                 }
             }}
+            is_adult={is_adultCategoryArr && is_adultCategoryArr[0].is_adult}
             data={sport} />;
           })
         );
@@ -79,7 +81,7 @@ import EpgComponent from '../../components/common/EpgComponent'
             <View style={{flex:2,paddingHorizontal:10}}>
             <Text style={[styles.titleText,{marginVertical:15,fontSize:20}]}>{this.state.videoData.name}</Text>
             <Text style={[styles.titleText,{marginBottom:8,fontSize:14}]}>{this.state.videoData.description}</Text>
-          <EpgComponent epgLink={this.state.videoData.EPG_file}/>
+          {this.state.videoData.EPG_file &&<EpgComponent epgLink={this.state.videoData.EPG_file}/>}
             <Text style={styles.titleText}>Popular channels</Text>
 
             <Carousal 

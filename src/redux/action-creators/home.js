@@ -41,7 +41,7 @@ export const getVideos = token => async dispatch => {
     });
 };
 export const getCategories = token => async dispatch => {
-  QueryUtil.get('/livetv/categories/')
+  QueryUtil.get('/livetv/categories/?limit=100')
     .then(response => {
       if (response.status == 200) {
         dispatch({type: GET_CATEGORIES, payload: response.data.results});
@@ -54,7 +54,6 @@ export const getCategories = token => async dispatch => {
 export const getHomeSettings = () => async dispatch => {
   QueryUtil.get('/settings/home/')
     .then(response => {
-      console.log("response",response)
       if (response.status == 200) {
         dispatch({type: GET_HOME_SETTINGS, payload: response.data.results});
       }

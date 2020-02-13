@@ -39,7 +39,10 @@ class LiveTv extends Component {
     return (
       categoryChannels &&
       categoryChannels.map((sport, i) => {
-        return <VideoListComponent data={sport} />;
+        let is_adultCategoryArr=this.props.categories.filter((item)=>item.id==sport.category[0])
+         return <VideoListComponent 
+        is_adult={is_adultCategoryArr && is_adultCategoryArr[0].is_adult}
+        data={sport} />;
       })
     );
   };

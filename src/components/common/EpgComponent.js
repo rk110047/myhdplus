@@ -10,15 +10,13 @@ constructor(props){
     }
 }
 componentDidMount(){
-    fetch(this.props.epgLink?this.props.epgLink:'http://185.94.77.114/media/tvguideBBC_vWZeEJl.xml')
+    fetch(this.props.epgLink)
     .then(response => response.text())
     .then(data => {
       parser.parseString(data, (err, result)=> {
-          console.log({result})
           this.setState({
               epgData:result
           })
-        console.log('Done');
     })
     })
 }

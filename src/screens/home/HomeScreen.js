@@ -35,7 +35,6 @@ class HomeScreenComponent extends Component {
     var initial = Orientation.getInitialOrientation();
      };
   render() {
-    console.log("props",this.props.homeVideo)
     if (!this.props.recVideos) {
       return <Text>loading...</Text>;
     }
@@ -68,7 +67,7 @@ class HomeScreenComponent extends Component {
                 <Text style={styles.titleBtn}>View All</Text>
               </TouchableOpacity> */}
             </View>
-            <Carousal channels={this.props.channels} />
+            <Carousal channels={this.props.poularChannels} />
             <View style={styles.contentContainer}>
               <Text style={styles.titleText}>Popular Content</Text>
             </View>
@@ -85,6 +84,7 @@ class HomeScreenComponent extends Component {
 
 const mapStateToProps = state => ({
   channels: state.channels.channels,
+  poularChannels:state.channels.channels.filter((item)=>item.is_popular),
   recVideos: state.channels.recVideos,
   archVideos: state.channels.archVideos,
   homeVideo:state.channels.homeSettings && state.channels.homeSettings[0]
