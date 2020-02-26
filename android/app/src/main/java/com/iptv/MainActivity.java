@@ -15,7 +15,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "Leanvia";
+    return "Iptv";
   }
   @Override
   public void onConfigurationChanged(Configuration newConfig) {

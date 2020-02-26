@@ -9,6 +9,7 @@ import {
   Settings,
   About,
   Radio,
+  VideoOnDemandChannelScreen,
 } from '../screens';
 import {Dimensions} from 'react-native';
 import CustomDrawer from './Drawer/CustomDrawer';
@@ -23,6 +24,7 @@ import ChangePassword2 from '../screens/ChangePassword/ChangePassword2';
 import Success from '../screens/ChangePassword/Success';
 import PlayVideo from '../screens/PlayVideo/PlayVideo';
 import VideoDetailsScreen from '../screens/video/VideoDetailsScreen';
+import VideoOnDemandDetailsScreen from '../screens/VideoOnDemand/videoOnDemandDetailsScreen';
 
 // const MainNavigator = createDrawerNavigator(
 //     {
@@ -91,6 +93,12 @@ const DrawerStack = createDrawerNavigator(
     VideoDetailsScreen: {
       screen: VideoDetailsScreen,
     },
+    VideoOnDemandChannelScreen:{
+      screen:VideoOnDemandChannelScreen
+    },
+    VideoOnDemandDetailsScreen:{
+      screen:VideoOnDemandDetailsScreen
+    }
   },
   {
     drawerBackgroundColor: '#212121',

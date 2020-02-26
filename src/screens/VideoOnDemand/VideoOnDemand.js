@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight,ScrollView, ImageBackground, Dimensions } from 'react-native';
+import { View, Text, TouchableHighlight,ScrollView, ImageBackground, Dimensions, FlatList,TouchableOpacity } from 'react-native';
 import BaseScreen from '../base/BaseScreen'
 import { styles } from '../LiveTv/LiveTv.style';
 import {connect} from 'react-redux';
 import VideoListComponent from '../../components/VideoListComponent';
 import { getvodChannels, getvodCategories } from '../../redux/action-creators/vod';
-
+const {width,height}=Dimensions.get("window")
 
 class VideoOnDemand extends Component {
     componentDidMount(){
@@ -49,22 +49,31 @@ class VideoOnDemand extends Component {
           })
         );
       };
-
+      openCategoryChannel=(item)=>{
+        let channels=this.props.categoryChannels.filter(
+          data => data.category[0] == item.id,
+        )
+        this.props.navigation.navigate("VideoOnDemandChannelScreen",{channels,category:item})
+      }
     render() {
         return (
             <BaseScreen logo={true} search={true}>
             <View style={styles.container}>
-              <View style={[styles.navContainer]}>
-                <ScrollView
-                  horizontal={true}
-                  showsHorizontalScrollIndicator={false}
-                  >
-                  {this.navbarList()}
-                </ScrollView>
-              </View>
-              <ScrollView>
-                <View style={styles.sportList}>{this.sportsList()}</View>
-              </ScrollView>
+              <FlatList
+              data={this.props.categories}
+              renderItem={(data)=>{
+                const {item}=data
+                return(<TouchableOpacity
+                onPress={()=>this.openCategoryChannel(item)}
+                >
+                  <ImageBackground
+                  resizeMode='contain'
+                  style={{width:width*0.85,height:150,marginVertical:10,borderWidth:2,borderColor:"white"}}
+                  source={{uri:item.background_image?item.background_image:"http://185.94.77.114/media/Entertainment-icon_YS9b7IX.png"}}
+                  />
+                </TouchableOpacity>)
+              }}
+              />
             </View>
           </BaseScreen>
         );
@@ -75,9 +84,7 @@ function mapStateToProps(state) {
     return {
       categories: state.vod.vodCategories,
       channels: state.vod.vodChannels,
-      categoryChannels: state.vod.vodChannels.filter(
-        item => item.category[0] == state.vod.selectedCategoryId,
-      ),
+      categoryChannels: state.vod.vodChannels,
       selectedCategoryId: state.vod.selectedCategoryId,
     };
   }

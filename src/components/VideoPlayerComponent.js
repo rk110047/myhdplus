@@ -14,6 +14,8 @@ export default class VideoPlayerComponent extends Component {
   }
   render() {
     const {channel_url, channel_image} = this.props.data;
+    console.log("video inn",this.props.data)
+
     return (
       <>
         {this.state.videoLoading && (
@@ -31,8 +33,6 @@ export default class VideoPlayerComponent extends Component {
             posterResizeMode="stretch"
             source={{
               uri: channel_url
-                ? channel_url
-                : 'http://185.94.77.110/live/vamoshd.m3u8',
             }}
             // Can be a URL or a local file.
             resizeMode="stretch"
@@ -50,12 +50,14 @@ export default class VideoPlayerComponent extends Component {
             disableSeekbar={
               this.props.disableSeekbar ? this.props.disableSeekbar : false
             }
-            onEnterFullscreen={()=>{
-              this.props.changeHeight(width,true)
-              Orientation.lockToLandscapeLeft()}}
-            onExitFullscreen={()=>{
-              this.props.changeHeight(200,false)
-              Orientation.unlockAllOrientations()}}
+            onEnterFullscreen={() => {
+              this.props.changeHeight(width, true);
+              Orientation.lockToLandscapeLeft();
+            }}
+            onExitFullscreen={() => {
+              this.props.changeHeight(200, false);
+              Orientation.unlockAllOrientations();
+            }}
             disableBack={
               this.props.disableBack ? this.props.disableBack : false
             }

@@ -2,6 +2,7 @@ import LoginScreenComponent from '../screens/auth/login/LoginScreen';
 import SignupScreenComponent  from '../screens/auth/signup/signup';
 import { SplashScreen, } from '../screens/splash/SplashScreen';
 import HomeScreenComponent from '../screens/home/HomeScreen';
+import VideoOnDemandChannelScreen from "../screens/VideoOnDemand/VideoOnDemandChannelScreen"
 import  LiveTv  from '../screens/LiveTv/LiveTv';
 import { Radio } from '../screens/Radio/Radio';
 import { ArchiveTv } from '../screens/ArchiveTv/ArchiveTv';
@@ -25,5 +26,6 @@ export {
     Support,
     VideoOnDemand,
     Notifications,
-    About
+    About,
+    VideoOnDemandChannelScreen
 }

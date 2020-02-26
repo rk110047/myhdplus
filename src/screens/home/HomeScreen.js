@@ -48,14 +48,16 @@ class HomeScreenComponent extends Component {
       logo search>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.container}>
-            <View style={{flex: 1, height: this.state.videoHeight, width: '100%'}}>
+            <View style={{flex: 1, height: this.state.videoHeight, width: '100%'}}>{
+              console.log("video",this.props.homeVideo)
+            }
               <VideoPlayerComponent 
               disableTimer={true}
               disableBack={true}
               data={
             {
-                  channel_url: (this.props.homeVideo && this.props.homeVideo.home_page_url)?this.props.homeVideo.home_page_url:"http://185.94.77.110/live/antena3-hd.mp4",
-                  channel_image: (this.props.homeVideo && this.props.homeVideo.site_logo)?this.props.homeVideo.site_logo:"https://www.rapidtvnews.com/images/2019/Mar_2019/Star-Sports-logo_6_March_2019.png",
+                  channel_url: this.props.homeVideo && this.props.homeVideo.home_page_url,
+                  channel_image: this.props.homeVideo && this.props.homeVideo.site_logo,
            }
            }
            changeHeight={(videoHeight,hideHeader)=>{this.setState({videoHeight,hideHeader})}}
