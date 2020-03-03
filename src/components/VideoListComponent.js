@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {TouchableOpacity, View, Text, Image, Alert} from 'react-native';
 import {styles} from '../screens/LiveTv/LiveTv.style';
 import {withNavigation} from 'react-navigation';
@@ -8,26 +8,25 @@ import AsyncStorage from '@react-native-community/async-storage';
 function VideoListComponent(props) {
   const [dialogVisible, setdialogVisible] = useState(false);
   const [password, setPassword] = useState('');
-  const [favouritesList,setFavouritesList]=useState([])
- 
+  const [favouritesList, setFavouritesList] = useState([]);
+
   useEffect(() => {
-     AsyncStorage.getItem('favourites').then(async value => {
-    if (value) setFavouritesList(JSON.parse(value));
-    console.log({favouritesList})
-  });
-  }, [])
-  const {is_adult, data, image, screen} = props;
+    AsyncStorage.getItem('favourites').then(async value => {
+      if (value) setFavouritesList(JSON.parse(value));
+    });
+  }, []);
+  const {is_adult, data, image, screen, radio} = props;
   const onVideoClick = () => {
     if (is_adult) {
       setdialogVisible(true);
     } else {
       props.onPressVideo
-        ? props.onPressVideo
+        ? props.onPressVideo()
         : props.navigation.navigate(
-            screen == 'videoOnDemandChannel'
+            screen == 'videoOnDemandChannel' || radio
               ? 'VideoOnDemandDetailsScreen'
               : 'VideoDetailsScreen',
-            {data},
+            {data, radio},
           );
     }
   };
@@ -50,24 +49,20 @@ function VideoListComponent(props) {
     setdialogVisible(false);
   };
   const addToFavourite = async () => {
-    await setFavouritesList(favouritesList.push(data));
-    AsyncStorage.setItem('favourites', JSON.stringify(favouritesList));
+    let newFavouritesList=favouritesList
+    await newFavouritesList.push(data)
+    await setFavouritesList([...newFavouritesList]);
+    AsyncStorage.setItem('favourites', JSON.stringify(newFavouritesList));
   };
   const removeFromFavourites = async () => {
-    console.log({favouritesList});
-
-    let index = favouritesList && favouritesList.findIndex(item => item.id == data.id);
-    if(index!==-1){
-      console.log("heeeee")
-      setFavouritesList(favouritesList.splice(index, 1))
-      console.log("heeeee1111",favouritesList)
-      AsyncStorage.setItem('favourites', JSON.stringify(favouritesList));
-    }
-    console.log({favouritesList});
+      let newFavouritesList= favouritesList
+      newFavouritesList= favouritesList &&
+      favouritesList.length > 0 && favouritesList.filter(item => item.id !== data.id);
+      await setFavouritesList([...newFavouritesList]);
+      AsyncStorage.setItem('favourites', JSON.stringify(newFavouritesList));
   };
   return (
     <>
-    {console.log("hello")}
       <Dialog.Container
         contentStyle={{backgroundColor: '#bfbfbf'}}
         visible={dialogVisible}>
@@ -108,15 +103,14 @@ function VideoListComponent(props) {
             <Text style={styles.descriptionText}>{data.description}</Text>
           </View>
         </TouchableOpacity>
-        {console.log("favouritesList1111",favouritesList)}
-        {/* <Favourites
+        <Favourites
           isFavourite={
-            favouritesList &&
+            favouritesList && favouritesList.length>0 && 
             favouritesList.findIndex(item => item.id == data.id)
           }
           addToFavourites={addToFavourite}
           removeFromFavourites={removeFromFavourites}
-        /> */}
+        />
       </View>
     </>
   );

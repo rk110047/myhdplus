@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {View,Text,StyleSheet,ScrollView,TouchableHighlight} from "react-native"
+import {View,Text,StyleSheet,ScrollView,TouchableHighlight,StatusBar} from "react-native"
 import BaseScreen from '../base/BaseScreen'
 import VideoPlayerComponent from '../../components/VideoPlayerComponent'
 import Carousal from '../../SharedComponent/HorizontalCarousal/Carousal'
@@ -18,6 +18,7 @@ import EpgComponent from '../../components/common/EpgComponent'
         }
     }
     componentDidMount(){
+      StatusBar.setHidden(true);
         this.setState({
             videoData:this.props.navigation.getParam("data")
         })
@@ -64,7 +65,7 @@ import EpgComponent from '../../components/common/EpgComponent'
       };
     render() {
         return (
-          <ScrollView>
+          <ScrollView style={{backgroundColor:"#072746"}}>
             <BaseScreen 
             hideHeader={this.state.hideHeader}
             logo={true} search={true}>

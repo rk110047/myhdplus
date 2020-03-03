@@ -108,7 +108,6 @@ class PlayVideo extends Component {
     // const categories = this.props.categories.data.results
 
     // let navName = ITEM[0].name;
-    console.log('testsss', this.props)
     const allVideos = this.props.archVideos.data === undefined ? [] : this.props.archVideos.data.results.concat(this.props.recVideos.data.results)
     return allVideos.map((video, i) => {
       return (

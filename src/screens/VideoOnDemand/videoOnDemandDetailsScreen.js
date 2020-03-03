@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {ScrollView, View, Image, Text,Dimensions} from 'react-native';
+import {ScrollView, View, Image, Text, Dimensions} from 'react-native';
 import BaseScreen from '../base/BaseScreen';
 import VideoPlayerComponent from '../../components/VideoPlayerComponent';
 import EpgComponent from '../../components/common/EpgComponent';
 import {styles} from '../LiveTv/LiveTv.style';
-const {width,height}=Dimensions.get("window")
+const {width, height} = Dimensions.get('window');
 export default class VideoOnDemandDetailsScreen extends Component {
   constructor(props) {
     super(props);
@@ -15,17 +15,20 @@ export default class VideoOnDemandDetailsScreen extends Component {
     };
   }
   async componentDidMount() {
-    let data=await this.props.navigation.getParam('data')
-    data.channel_image=await data.content_image
-    data.channel_url=await data.content_url
+    let data = await this.props.navigation.getParam('data');
+    let radio = await this.props.navigation.getParam('radio');
+    console.log({radio});
+    if (!radio) {
+      data.channel_image = await data.content_image;
+      data.channel_url = await data.content_url;
+    }
     this.setState({
       videoData: data,
     });
-
   }
   render() {
     return (
-      <ScrollView style={{flex:1}}>
+      <ScrollView style={{flex: 1}}>
         <BaseScreen
           hideHeader={this.state.hideHeader}
           logo={true}
@@ -41,7 +44,7 @@ export default class VideoOnDemandDetailsScreen extends Component {
               }}
             />
           </View>
-          <View style={{height:height-200, paddingHorizontal: 10}}>
+          <View style={{height: height - 200, paddingHorizontal: 10}}>
             <Text
               style={[styles.titleText, {marginVertical: 15, fontSize: 20}]}>
               {this.state.videoData.name}

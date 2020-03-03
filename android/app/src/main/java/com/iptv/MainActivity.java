@@ -1,4 +1,4 @@
-package com.leanvia;
+package com.gifibre;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

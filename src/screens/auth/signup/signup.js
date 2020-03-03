@@ -46,12 +46,14 @@ class SignupScreenComponent extends Component {
             placeholderTextColor="rgba(33,33,33,0.5)"
             style={styles.textInput}
             onChangeText={val => this.onChangeText('email', val)}
+            autoCapitalize="none"
           />
           <TextInput
             textContentType="password"
             secureTextEntry={true}
             password={true}
             placeholder="Password"
+            autoCapitalize="none"
             placeholderTextColor="rgba(33,33,33,0.5)"
             style={styles.textInput}
             onChangeText={val => this.onChangeText('password', val)}
@@ -63,6 +65,7 @@ class SignupScreenComponent extends Component {
             placeholder="Confirm Password"
             placeholderTextColor="rgba(33,33,33,0.5)"
             style={styles.textInput}
+            autoCapitalize="none"
             onChangeText={val => this.onChangeText('confirmed_password', val)}
           />
           <TouchableOpacity

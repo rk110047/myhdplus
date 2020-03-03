@@ -45,6 +45,7 @@ this.props.login(this.state,this.props.navigation)
             keyboardType="email-address"
             placeholderTextColor="rgba(33,33,33,0.5)"
             style={styles.textInput}
+            autoCapitalize='none'
             onChangeText={val => this.onChangeText("email", val)}
           />
           <TextInput
@@ -54,6 +55,7 @@ this.props.login(this.state,this.props.navigation)
             placeholder="Password"
             placeholderTextColor="rgba(33,33,33,0.5)"
             style={styles.textInput}
+            autoCapitalize='none'
             onChangeText={val => this.onChangeText("password", val)}
           />
           <TouchableOpacity

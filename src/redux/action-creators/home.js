@@ -23,8 +23,6 @@ export const getChannels = () => async dispatch => {
 export const getVideos = token => async dispatch => {
   QueryUtil.get('/archives/')
     .then(response => {
-      console.log("getVideos ",response)
-
       if (response.status == 200 && response.data.results) {
         let recVideos = [];
         let arcVideo = [];
@@ -45,8 +43,6 @@ export const getVideos = token => async dispatch => {
 export const getCategories = token => async dispatch => {
   QueryUtil.get('/livetv/categories/?limit=100')
     .then(response => {
-      console.log("getCategories ",response)
-
       if (response.status == 200) {
         dispatch({type: GET_CATEGORIES, payload: response.data.results});
       }
@@ -56,11 +52,8 @@ export const getCategories = token => async dispatch => {
     });
 };
 export const getHomeSettings = () => async dispatch => {
-  console.log("homeserrings innnnn")
-
   QueryUtil.get('/settings/home/')
     .then(response => {
-      console.log("homeserrings ",response)
       if (response.status == 200) {
         dispatch({type: GET_HOME_SETTINGS, payload: response.data.results});
       }

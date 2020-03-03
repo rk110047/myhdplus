@@ -1,4 +1,4 @@
-package com.leanvia;
+package com.gifibre;
 
 import android.app.Application;
 import android.content.Context;

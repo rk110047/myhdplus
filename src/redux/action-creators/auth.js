@@ -2,9 +2,11 @@ import {USER_LOGIN, USER_REGISTER} from '../action-types/auth';
 import QueryUtil from '../../utils/QueryUtil';
 import AsyncStorage from '@react-native-community/async-storage';
 import Toast from 'react-native-simple-toast';
+import { Alert } from 'react-native';
 
 // the action creator to Register the user
 export const userRegister = (user, navigation) => async dispatch => {
+  user.email=user.email.toLowerCase()
   QueryUtil.postWithoutToken('/auth/register/', user)
     .then(response => {
       if (response.status) {
@@ -16,15 +18,16 @@ export const userRegister = (user, navigation) => async dispatch => {
       }
     })
     .catch(err => {
+      console.log({err})
       alert(err.toString());
     });
 };
 
 // the action creator to Login the user
 export const userLogin = (user, navigation) => async dispatch => {
+  user.email=user.email.toLowerCase()
   QueryUtil.postWithoutToken('/auth/login/', user)
     .then(response => {
-      console.log("user Login",response)
       if (response && response.data && response.status == 200) {
         AsyncStorage.setItem('api_token', response.data.data.user.token);
         navigation.navigate('Main');
@@ -34,7 +37,14 @@ export const userLogin = (user, navigation) => async dispatch => {
       }
     })
     .catch(err => {
-      alert(err.toString());
-      console.log('error', err);
+      if(err.response.status==401){
+        Alert.alert("GibFibre","Your email or password were incorrect")
+      }
+      else{
+        alert(err.toString());
+
+      }
+      console.log({err})
+
     });
 };

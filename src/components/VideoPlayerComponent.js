@@ -14,8 +14,6 @@ export default class VideoPlayerComponent extends Component {
   }
   render() {
     const {channel_url, channel_image} = this.props.data;
-    console.log("video inn",this.props.data)
-
     return (
       <>
         {this.state.videoLoading && (

@@ -1,18 +1,93 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import React, {Component} from 'react';
+import {View, Text, ScrollView, TouchableHighlight, Image} from 'react-native';
 import BaseScreen from '../base/BaseScreen';
-import styles from './Radio.style';
+import {styles} from '../LiveTv/LiveTv.style';
+import {connect} from 'react-redux';
+import VideoListComponent from '../../components/VideoListComponent';
+import { getradioChannels, getradioCategories } from '../../redux/action-creators/radio';
 
 class Radio extends Component {
- 
-    render() {
-        return (
-            <BaseScreen logo search>
-
-            </BaseScreen>
-        );
+    componentDidMount(){
+this.props.getChannels();
+this.props.getCategories()
     }
+  navbarList = () => {
+    const {categories} = this.props;
+    return (
+      categories &&
+      categories.map((nav, i) => {
+        const navTextStyle =
+          categories[i].status == true ? styles.activeNavText : styles.navText;
+        const navbarStyle =
+          categories[i].status == true ? styles.activeNavbar : styles.navbar;
+        return (
+          <TouchableHighlight
+            key={i}
+            underlayColor="#0d8ad2"
+            onPress={() => this.props.navClickHandler(nav.id)}>
+            <View style={navbarStyle}>
+              <Text style={navTextStyle}>{nav && nav.name}</Text>
+            </View>
+          </TouchableHighlight>
+        );
+      })
+    );
+  };
+  sportsList = () => {
+    const {categoryChannels} = this.props;
+    return (
+      categoryChannels &&
+      categoryChannels.map((sport, i) => {
+        let is_adultCategoryArr = this.props.categories.filter(
+          item => item.id == sport.category[0],
+        );
+        return (
+          <VideoListComponent
+            is_adult={is_adultCategoryArr && is_adultCategoryArr[0].is_adult}
+            data={sport}
+            radio={true}
+          />
+        );
+      })
+    );
+  };
+  render() {
+    return (
+      <BaseScreen logo={true} search={true}>
+        <View style={styles.container}>
+          <View style={[styles.navContainer]}>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}>
+              {this.navbarList()}
+            </ScrollView>
+          </View>
+          <ScrollView>
+            <View style={styles.sportList}>{this.sportsList()}</View>
+          </ScrollView>
+        </View>
+      </BaseScreen>
+    );
+  }
 }
 
-
-export { Radio }
+function mapStateToProps(state) {
+  return {
+    categories: state.radio.radioCategories,
+    channels: state.radio.radioChannels,
+    categoryChannels: state.radio.radioChannels.filter(
+      item => item.category[0] == state.radio.selectedCategoryId,
+    ),
+    selectedCategoryId: state.radio.selectedCategoryId,
+  };
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    // dispatching plain actions
+    navClickHandler: id =>
+      dispatch({type: 'CHANGE_LIVETV_NAVIGATION_STATUS', payload: id}),
+      getChannels:()=>dispatch(getradioChannels()),
+      getCategories:()=>dispatch(getradioCategories())
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Radio);

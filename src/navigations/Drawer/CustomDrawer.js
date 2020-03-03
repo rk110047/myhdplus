@@ -41,11 +41,11 @@ const List = [
     //     name: 'Notifications',
     //     screen:'Notifications'
     // },
-     {
-        image: require('../../../assets/imgs/support.png'),
-        name: 'Support',
-        screen:'Support'
-    }, 
+    //  {
+    //     image: require('../../../assets/imgs/support.png'),
+    //     name: 'Support',
+    //     screen:'Support'
+    // }, 
     {
         image: require('../../../assets/imgs/settings.png'),
         name: 'Settings',
