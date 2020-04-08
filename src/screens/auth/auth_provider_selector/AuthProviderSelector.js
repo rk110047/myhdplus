@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, Button, Image} from 'react-native';
 import {styles} from "./AuthProviderSelector.style";
-import iptv_logo from '../../../../assets/imgs/iptv_logo.jpg';
+import iptv_logo from '../../../../assets/imgs/gibstat.png';
 
 class AuthProviderSelectorComponent extends Component {
     onPress = () => {

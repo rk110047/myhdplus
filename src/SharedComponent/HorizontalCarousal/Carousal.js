@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text,ScrollView ,Image, TouchableOpacity} from 'react-native';
+import { View, Text,ScrollView ,Image, TouchableOpacity, Dimensions} from 'react-native';
 import {styles} from './Carousal.style';
 import { withNavigation } from 'react-navigation';
+import { ColorConst } from '../../utils/Constants';
 
 
 function Carousal(props) {
@@ -20,7 +21,7 @@ function Carousal(props) {
         return (
             <View style={styles.channelContainer}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    {channelsRow()}
+                    {props.channels && props.channels.length>0?channelsRow():<Text style={{color:ColorConst.themeColor}}>No Data Found</Text>}
                 </ScrollView>
             </View>
         )

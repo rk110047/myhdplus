@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, ScrollView, TouchableHighlight, Image} from 'react-native';
+import {View, Text, ScrollView, TouchableHighlight, Image, StatusBar} from 'react-native';
 import BaseScreen from '../base/BaseScreen';
 import {styles} from './LiveTv.style';
 import {connect} from 'react-redux';
@@ -9,7 +9,9 @@ class LiveTv extends Component {
   constructor(props) {
     super(props);
   }
-
+componentDidMount(){
+  StatusBar.setHidden(true);
+}
   navbarList = () => {
     const {categories} = this.props;
   return (

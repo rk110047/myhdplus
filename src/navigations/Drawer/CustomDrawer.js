@@ -8,6 +8,7 @@ import {
     TouchableHighlight,
 } from 'react-native';
 import styles from './CustomDrawer.style';
+import { ColorConst } from '../../utils/Constants';
 
 
 const List = [
@@ -26,7 +27,7 @@ const List = [
     }, {
         image: require('../../../assets/imgs/archiveTv.png'),
         name: 'Archive Tv',
-        screen:'HomeScreen'
+        screen:'ArchiveTv'
     }, {
         image: require('../../../assets/imgs/radio.png'),
         name: 'Radio',
@@ -105,7 +106,7 @@ export default class CustomDrawer extends Component {
 
             return (
                 <TouchableHighlight key={i} 
-                onPress={() => this.clickHandler(i,list.screen)} underlayColor='#212121'>
+                onPress={() => this.clickHandler(i,list.screen)} underlayColor={ColorConst.textColor}>
                     <View style={containerStyle}>
                         <Image source={list.image} style={imageStyle} resizeMode='contain' />
                         <Text style={textStyle}>{list.name}</Text>
@@ -117,9 +118,9 @@ export default class CustomDrawer extends Component {
 
     render() {
         return (
-                <ScrollView style={{backgroundColor:"#072746"}}>
-                    <View style={[styles.logoContainer,{borderWidth:2}]}>
-                        <Image source={require('../../../assets/imgs/logo.png')} style={styles.logo}></Image>
+                <ScrollView style={{backgroundColor:ColorConst.backgroundColor}}>
+                    <View style={[styles.logoContainer]}>
+                        <Image source={require('../../../assets/imgs/gibstat.png')} style={styles.logo}></Image>
                     </View>
                     {this.renderData()}
                 </ScrollView>

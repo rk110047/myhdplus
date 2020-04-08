@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+import { ColorConst } from "../../utils/Constants";
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
         width:width*0.05
     },
     activeImage:{
-        tintColor:'#FFC200',
+        tintColor:ColorConst.themeColor,
         height:21,
         width:21,
         resizeMode:'contain',

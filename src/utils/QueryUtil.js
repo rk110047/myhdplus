@@ -3,6 +3,7 @@ import AsyncStorage from "@react-native-community/async-storage";
 
 export default class QueryUtil {
     static getHeader=async ()=>{
+        console.log("token",await AsyncStorage.getItem('api_token'))
        const header= {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ` +await AsyncStorage.getItem('api_token')
@@ -10,7 +11,7 @@ export default class QueryUtil {
        return header
     }
     // static base_url ="http://185.94.77.112:8000/api/v1" old server
-    static base_url="http://185.94.77.114/api/v1"
+    static base_url="https://gs-iptv-mgmt01.gibsat.com/api/v1"
      static getWithoutToken=(path)=>{
         return axios.get(QueryUtil.base_url + path)
     }

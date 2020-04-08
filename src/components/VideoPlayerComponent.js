@@ -23,14 +23,10 @@ export default class VideoPlayerComponent extends Component {
         )}
         <View style={{flex: 1, width: '100%'}}>
           <VideoPlayer
-            poster={
-              channel_image
-                ? channel_image
-                : 'https://www.rapidtvnews.com/images/2019/Mar_2019/Star-Sports-logo_6_March_2019.png'
-            }
+            poster={channel_image}
             posterResizeMode="stretch"
             source={{
-              uri: channel_url
+              uri: channel_url,
             }}
             // Can be a URL or a local file.
             resizeMode="stretch"
@@ -45,9 +41,9 @@ export default class VideoPlayerComponent extends Component {
             disableTimer={
               this.props.disableTimer ? this.props.disableTimer : false
             }
-            disableSeekbar={
-              this.props.disableSeekbar ? this.props.disableSeekbar : false
-            }
+            // disableSeekbar={
+            //   this.props.disableSeekbar ? this.props.disableSeekbar : false
+            // }
             onEnterFullscreen={() => {
               this.props.changeHeight(width, true);
               Orientation.lockToLandscapeLeft();
@@ -77,5 +73,6 @@ let styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     right: 0,
+    width: '100%',
   },
 });

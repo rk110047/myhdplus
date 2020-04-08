@@ -5,7 +5,7 @@ import HomeScreenComponent from '../screens/home/HomeScreen';
 import VideoOnDemandChannelScreen from "../screens/VideoOnDemand/VideoOnDemandChannelScreen"
 import  LiveTv  from '../screens/LiveTv/LiveTv';
 import Radio  from '../screens/Radio/Radio';
-import { ArchiveTv } from '../screens/ArchiveTv/ArchiveTv';
+import  ArchiveTv  from '../screens/ArchiveTv/ArchiveTv';
 import { Notifications } from '../screens/Notifications/Notifications';
 import { Support } from '../screens/Support/Support';
 import { RecordedVideo } from '../screens/RecordedVideo/RecordedVideo';

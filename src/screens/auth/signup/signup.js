@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {styles} from './signup.style';
-import logo from '../../../../assets/imgs/iptv_logo.jpg';
+import logo from '../../../../assets/imgs/gibstat.png';
 import {userRegister} from '../../../redux/action-creators/auth';
 
 class SignupScreenComponent extends Component {

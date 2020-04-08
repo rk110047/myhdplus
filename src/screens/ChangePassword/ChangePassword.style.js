@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+import { ColorConst } from "../../utils/Constants";
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
     },
     submitContainer:{
         display:'flex',
-        backgroundColor:'#FFC200',
+        backgroundColor:ColorConst.themeColor,
         height:height*0.08,
         width:width*0.90,
         borderRadius:8,

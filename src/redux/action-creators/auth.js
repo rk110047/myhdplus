@@ -19,7 +19,24 @@ export const userRegister = (user, navigation) => async dispatch => {
     })
     .catch(err => {
       console.log({err})
-      alert(err.toString());
+      const {data}=err.response
+      if(data.errors && data.errors.email){
+        Alert.alert("Gibsat",data.errors.email[0]?data.errors.email[0]:"Server Error")
+      }
+      else if(data.errors && data.errors.password){
+        Alert.alert("Gibsat",data.errors.password[0]?data.errors.password[0]:"Server Error")
+      }
+      else if(data.errors && data.errors.passwords){
+        Alert.alert("Gibsat",data.errors.passwords[0]?data.errors.passwords[0]:"Server Error")
+      }
+      else if(data.errors && data.errors.confirmed_password){
+        Alert.alert("Gibsat",data.errors.confirmed_password[0]?data.errors.confirmed_password[0]:"Server Error")
+
+      }
+      else{
+        alert(err.toString());
+
+      }
     });
 };
 
@@ -37,14 +54,17 @@ export const userLogin = (user, navigation) => async dispatch => {
       }
     })
     .catch(err => {
-      if(err.response.status==401){
-        Alert.alert("GibFibre","Your email or password were incorrect")
+      const {data}=err.response
+      if(data.errors && data.errors.password){
+        Alert.alert("GibFibre",data.errors.password[0]?data.errors.password[0]:"Server Error")
+      }
+     else if(data.errors && data.errors.invalid){
+        Alert.alert("GibFibre",data.errors.invalid[0]?data.errors.invalid[0]:"Server Error")
       }
       else{
         alert(err.toString());
 
       }
-      console.log({err})
 
     });
 };

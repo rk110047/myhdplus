@@ -9,12 +9,12 @@ import {
   TouchableOpacity
 } from "react-native";
 import { styles } from "./LoginScreen.style";
-import logo from "../../../../assets/imgs/iptv_logo.jpg";
+import logo from "../../../../assets/imgs/gibstat.png";
 import { userLogin } from "../../../redux/action-creators/auth";
 
 class LoginScreenComponent extends Component {
   state = {
-    email: "test1@gmail.com",
+    email: "dummy@gmail.com",
     password: "test12345678"
     // email:'',
     // password:''

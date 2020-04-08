@@ -1,4 +1,5 @@
 import {StyleSheet, Dimensions} from 'react-native';
+import { ColorConst } from '../../utils/Constants';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -16,9 +17,9 @@ const styles = StyleSheet.create({
   },
   activeNavbar: {
     marginHorizontal: 14,
-    borderBottomWidth: 2,
+    borderBottomWidth: 3,
     height: height * 0.06,
-    borderColor: '#0d8ad2',
+    borderColor: '#13a4f3',
     paddingBottom: 15,
   },
   navContainer: {
@@ -26,13 +27,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: width,
+    width: "100%",
     // marginHorizontal: 14,
     marginBottom: 15,
-    backgroundColor: '#d9d9d9',
+    backgroundColor:ColorConst.backgroundColor ,
   },
   navText: {
-    color: 'black',
+    color: 'white',
     fontSize: 16,
     fontWeight: 'normal',
     marginHorizontal: 5,
@@ -40,28 +41,28 @@ const styles = StyleSheet.create({
   activeNavText: {
     fontWeight: 'bold',
     fontSize: 18,
-    color: 'black',
+    color: 'white',
     marginHorizontal: 5,
   },
   sportContainer: {
     display: 'flex',
     flexDirection: 'row',
-    width: width * 0.8,
+    width: "90%",
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginVertical: 10,
+    // marginVertical: 10,
   },
   sportList: {
     flexDirection: 'column',
-    width: width * 0.95,
+    width: "95%",
     marginVertical: height * 0.03,
   },
   imageContainer: {
     flex: 2,
-    height: 72,
+    // height: 72,
   },
   descriptionContainer: {
-    flex: 3,
+    flex:3,
     height: 'auto',
   },
 

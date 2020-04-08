@@ -25,6 +25,7 @@ import Success from '../screens/ChangePassword/Success';
 import PlayVideo from '../screens/PlayVideo/PlayVideo';
 import VideoDetailsScreen from '../screens/video/VideoDetailsScreen';
 import VideoOnDemandDetailsScreen from '../screens/VideoOnDemand/videoOnDemandDetailsScreen';
+import { ColorConst } from '../utils/Constants';
 
 // const MainNavigator = createDrawerNavigator(
 //     {
@@ -109,7 +110,7 @@ const DrawerStack = createDrawerNavigator(
     // overlayColor: '#FAF2C8',
     unmountInactiveRoutes: true,
     contentOptions: {
-      activeTintColor: '#FFC200',
+      activeTintColor: ColorConst.themeColor,
       // activeBackgroundColor: '#FFF2CB',
       inactiveTintColor: '#FFFFFF',
     },

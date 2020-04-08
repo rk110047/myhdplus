@@ -2,8 +2,7 @@ import React from 'react';
 import {TouchableOpacity,Image} from 'react-native';
 export default function Favourites(props) {
     const {isFavourite}=props
-    let favouriteStar=(isFavourite==-1 || isFavourite===false )?false:true
-    console.log("isFavourite",isFavourite,"favouriteStar",favouriteStar)
+    let favouriteStar=(isFavourite==-1 || isFavourite===false || isFavourite===null )?false:true
   return (
     <TouchableOpacity
       onPress={

@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {ScrollView, View, Image, Text, Dimensions} from 'react-native';
+import {
+  ScrollView,
+  View,
+  Image,
+  Text,
+  Dimensions,
+  StatusBar,
+} from 'react-native';
 import BaseScreen from '../base/BaseScreen';
 import VideoPlayerComponent from '../../components/VideoPlayerComponent';
 import EpgComponent from '../../components/common/EpgComponent';
@@ -17,7 +24,7 @@ export default class VideoOnDemandDetailsScreen extends Component {
   async componentDidMount() {
     let data = await this.props.navigation.getParam('data');
     let radio = await this.props.navigation.getParam('radio');
-    console.log({radio});
+    StatusBar.setHidden(true);
     if (!radio) {
       data.channel_image = await data.content_image;
       data.channel_url = await data.content_url;
@@ -40,6 +47,7 @@ export default class VideoOnDemandDetailsScreen extends Component {
               disableSeekbar={true}
               data={this.state.videoData}
               changeHeight={(videoHeight, hideHeader) => {
+                StatusBar.setHidden(true) 
                 this.setState({videoHeight, hideHeader});
               }}
             />

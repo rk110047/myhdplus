@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight,ScrollView, ImageBackground, Dimensions, FlatList,TouchableOpacity } from 'react-native';
+import { View, Text, TouchableHighlight,ScrollView, ImageBackground, Dimensions, FlatList,TouchableOpacity, Alert } from 'react-native';
 import BaseScreen from '../base/BaseScreen'
 import { styles } from '../LiveTv/LiveTv.style';
 import {connect} from 'react-redux';
 import VideoListComponent from '../../components/VideoListComponent';
 import { getvodChannels, getvodCategories } from '../../redux/action-creators/vod';
+import Dialog from 'react-native-dialog';
+
 const {width,height}=Dimensions.get("window")
 
 class VideoOnDemand extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      dialogVisible:false,
+      password:"",
+      channels:[],
+      category:[]
+    }
+  }
     componentDidMount(){
         this.props.getChannels();
         this.props.getCategories();
@@ -36,28 +47,56 @@ class VideoOnDemand extends Component {
           })
         );
       };
-      sportsList = () => {
-        const {categoryChannels} = this.props;
-        return (
-          categoryChannels &&
-          categoryChannels.map((sport, i) => {
-            let is_adultCategoryArr=this.props.categories.filter((item)=>item.id==sport.category[0])
-             return <VideoListComponent 
-             image={sport.content_image}
-            is_adult={is_adultCategoryArr && is_adultCategoryArr[0].is_adult}
-            data={sport} />;
-          })
-        );
-      };
+
       openCategoryChannel=(item)=>{
         let channels=this.props.categoryChannels.filter(
           data => data.category[0] == item.id,
         )
+        console.log({item})
+        if(item.is_adult){
+          this.setState({dialogVisible:true,channels,category:item})
+        }
+        else
         this.props.navigation.navigate("VideoOnDemandChannelScreen",{channels,category:item})
+      }
+      handleCancel=()=>{
+        this.setState({
+        dialogVisible:false
+        })
+      }
+      handleConfirm=()=>{
+        this.setState({dialogVisible:false})
+        if (this.state.password !== '6666') {
+          Alert.alert('Gibsat', 'Incorrect Password');
+        }
+        else{
+          this.props.navigation.navigate("VideoOnDemandChannelScreen",{channels:this.state.channels,category:this.state.category})
+        }
       }
     render() {
         return (
             <BaseScreen logo={true} search={true}>
+               <Dialog.Container
+        contentStyle={{backgroundColor: '#bfbfbf'}}
+        visible={this.state.dialogVisible}>
+        <Dialog.Title>Password</Dialog.Title>
+        <Dialog.Description>
+          This is locked content. Do you want to access this?.
+        </Dialog.Description>
+        <Dialog.Input
+          wrapperStyle={{
+            backgroundColor: 'white',
+            borderRadius: 15,
+            paddingLeft: 20,
+          }}
+          onChangeText={text => this.setState({password:text})}
+          placeholder="Enter your password"
+          keyboardType="number-pad"
+          maxLength={4}
+        />
+        <Dialog.Button label="Ok" onPress={this.handleConfirm} />
+        <Dialog.Button label="Cancel" onPress={this.handleCancel} />
+      </Dialog.Container>
             <View style={styles.container}>
               <FlatList
               data={this.props.categories}
@@ -67,8 +106,8 @@ class VideoOnDemand extends Component {
                 onPress={()=>this.openCategoryChannel(item)}
                 >
                   <ImageBackground
-                  resizeMode='contain'
-                  style={{width:width*0.85,height:150,marginVertical:10,borderWidth:2,borderColor:"white"}}
+                  resizeMode='stretch'
+                  style={{width:width*0.85,height:150,marginVertical:2}}
                   source={{uri:item.background_image?item.background_image:"http://185.94.77.114/media/Entertainment-icon_YS9b7IX.png"}}
                   />
                 </TouchableOpacity>)

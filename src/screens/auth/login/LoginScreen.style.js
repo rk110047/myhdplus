@@ -1,4 +1,5 @@
 import {StyleSheet} from "react-native";
+import { ColorConst } from "../../../utils/Constants";
 
 const styles = StyleSheet.create({
     container: {
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
             opacity: 1,
             width: 363,
             height: 52,
-        backgroundColor: '#FFC200',
+        backgroundColor: ColorConst.themeColor,
         alignItems:'center',
         justifyContent:'center',
         marginBottom: 16,
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
     },
     linkText2:{
         textAlign: 'center',
-            color: '#FFC200',
+            color: ColorConst.themeColor,
             fontSize: 16,
     }
 

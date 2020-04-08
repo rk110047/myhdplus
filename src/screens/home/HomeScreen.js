@@ -4,6 +4,8 @@ import {
   View,  
   Text,
   AsyncStorage,
+  StatusBar,
+  Dimensions
 } from 'react-native';
 import BaseScreen from '../base/BaseScreen';
 import {styles} from './HomeScreen.style';
@@ -13,27 +15,39 @@ import {
   getChannels,
   getVideos,
   getCategories,
-  getHomeSettings
+  getHomeSettings,
+  getAllFavourites,
+  getProfileSettings
 } from '../../redux/action-creators/home';
 import VideoPlayerComponent from '../../components/VideoPlayerComponent';
 import VideoListComponent from '../../components/VideoListComponent';
 import Orientation from 'react-native-orientation-locker';
-
+const {width,height}=Dimensions.get("window")
 class HomeScreenComponent extends Component {
   constructor(props){
     super(props)
     this.state={videoHeight:200,
-    hideHeader:false
+    hideHeader:false,
+    favouritesList:[]
     }
   }
-  componentDidMount = async () => {
+  componentDidMount = async () => 
+  {
     const api_token = await AsyncStorage.getItem('api_token');
     this.props.getChannels();
     this.props.getCategories();
     this.props.getHomeSettings();
+    this.props.getAllFavourites();
+    // this.props.getProfileSettings()
+    AsyncStorage.getItem('favourites').then( value => {
+      if (value) {
+        this.setState({favouritesList:JSON.parse(value)})
+      }
+    });
     const renderVideos = await this.props.getVideos(api_token);
     var initial = Orientation.getInitialOrientation();
      };
+  
   render() {
     if (!this.props.recVideos) {
       return <Text>loading...</Text>;
@@ -48,9 +62,7 @@ class HomeScreenComponent extends Component {
       logo search>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.container}>
-            <View style={{flex: 1, height: this.state.videoHeight, width: '100%'}}>{
-              console.log("video",this.props.homeVideo)
-            }
+            <View style={{flex: 1, height: this.state.videoHeight, width: '100%'}}>
               <VideoPlayerComponent 
               disableTimer={true}
               disableBack={true}
@@ -60,7 +72,9 @@ class HomeScreenComponent extends Component {
                   channel_image: this.props.homeVideo && this.props.homeVideo.site_logo,
            }
            }
-           changeHeight={(videoHeight,hideHeader)=>{this.setState({videoHeight,hideHeader})}}
+           changeHeight={(videoHeight,hideHeader)=>{
+            StatusBar.setHidden(true) 
+            this.setState({videoHeight,hideHeader})}}
            />
             </View>
             <View style={styles.rowContainer}>
@@ -71,10 +85,10 @@ class HomeScreenComponent extends Component {
             </View>
             <Carousal channels={this.props.poularChannels} />
             <View style={styles.contentContainer}>
-              <Text style={styles.titleText}>Popular Content</Text>
+              <Text style={styles.titleText}>Favourite Channels</Text>
             </View>
             <FlatList
-              data={this.props.archVideos}
+              data={this.state.favouritesList}
               renderItem={({item}) => <VideoListComponent data={item} />}
             />
           </View>
@@ -96,5 +110,7 @@ export default connect(mapStateToProps, {
   getChannels,
   getVideos,
   getCategories,
-  getHomeSettings
+  getHomeSettings,
+  getAllFavourites,
+  getProfileSettings
 })(HomeScreenComponent);

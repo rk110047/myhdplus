@@ -76,7 +76,9 @@ import EpgComponent from '../../components/common/EpgComponent'
                 navigator={this.props.navigation}
                 disableSeekbar={true}
                 data={this.state.videoData}
-                changeHeight={(videoHeight,hideHeader)=>{this.setState({videoHeight,hideHeader})}}
+                changeHeight={(videoHeight,hideHeader)=>{
+                  StatusBar.setHidden(true) 
+                  this.setState({videoHeight,hideHeader})}}
                 />
             </View>
             <View style={{flex:2,paddingHorizontal:10}}>

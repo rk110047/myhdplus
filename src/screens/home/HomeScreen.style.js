@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+import { ColorConst } from "../../utils/Constants";
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
         lineHeight: 23
     },
     titleBtn: {
-        color: '#FFC200',
+        color: ColorConst.themeColor,
         fontSize: 12,
         lineHeight: 17,
     },

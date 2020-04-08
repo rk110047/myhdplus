@@ -1,4 +1,4 @@
-package com.gifibre;
+package com.gibstat;
 
 import android.app.Application;
 import android.content.Context;

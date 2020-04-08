@@ -8,19 +8,19 @@ const styles = StyleSheet.create({
     channelContainer: {
         flexDirection: 'row',
         marginVertical: 16,
-        width: width * 0.95,
+        width: "95%",
     },
     channel: {
         height: height * 11 / 100,
-        width: width * 26.6 / 100,
+        width: width*26.6/100,
         backgroundColor: '#FFFFFF',
         borderRadius: 8,
         // opacity: 1,
-        marginRight: 16
+        marginRight: 16,
     },
     image:{
         height: height * 11 / 100,
-        width: width * 26.6 / 100, 
+        width: "100%", 
         resizeMode:'contain'
     }
 })

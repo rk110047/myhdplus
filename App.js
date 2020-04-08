@@ -1,5 +1,5 @@
-import React from 'react';
-import {StyleSheet} from 'react-native';
+import React,{useEffect} from 'react';
+import {StyleSheet, StatusBar} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 
 import SplashSwitchNavigator from './src/navigations';
@@ -7,7 +7,6 @@ import {Provider} from 'react-redux';
 import store from './src/redux/store';
 
 export default function App() {
-
   return (
     <Provider store={store}>
       <AppContainer />

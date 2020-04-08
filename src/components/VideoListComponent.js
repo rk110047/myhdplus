@@ -5,6 +5,8 @@ import {withNavigation} from 'react-navigation';
 import Dialog from 'react-native-dialog';
 import Favourites from './common/Favourites';
 import AsyncStorage from '@react-native-community/async-storage';
+import { connect } from 'react-redux';
+import {addToFavourites,removeFromFavourites} from "../redux/action-creators/home"
 function VideoListComponent(props) {
   const [dialogVisible, setdialogVisible] = useState(false);
   const [password, setPassword] = useState('');
@@ -48,19 +50,7 @@ function VideoListComponent(props) {
   const handleCancel = () => {
     setdialogVisible(false);
   };
-  const addToFavourite = async () => {
-    let newFavouritesList=favouritesList
-    await newFavouritesList.push(data)
-    await setFavouritesList([...newFavouritesList]);
-    AsyncStorage.setItem('favourites', JSON.stringify(newFavouritesList));
-  };
-  const removeFromFavourites = async () => {
-      let newFavouritesList= favouritesList
-      newFavouritesList= favouritesList &&
-      favouritesList.length > 0 && favouritesList.filter(item => item.id !== data.id);
-      await setFavouritesList([...newFavouritesList]);
-      AsyncStorage.setItem('favourites', JSON.stringify(newFavouritesList));
-  };
+
   return (
     <>
       <Dialog.Container
@@ -85,7 +75,7 @@ function VideoListComponent(props) {
         <Dialog.Button label="Cancel" onPress={handleCancel} />
       </Dialog.Container>
 
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+      <View style={[{flexDirection: 'row', justifyContent: 'space-between'},props.containerStyle]}>
         <TouchableOpacity
           key={data.id}
           style={[styles.sportContainer]}
@@ -94,8 +84,9 @@ function VideoListComponent(props) {
           <View style={styles.imageContainer}>
             <Image
               source={{uri: image ? image : data.channel_image}}
-              resizeMode="stretch"
-              style={styles.sportImage}
+              resizeMode="contain"
+              onError={(error)=>console.log({error})}
+              style={[styles.sportImage,props.imageStyle]}
             />
           </View>
           <View style={styles.descriptionContainer}>
@@ -105,14 +96,18 @@ function VideoListComponent(props) {
         </TouchableOpacity>
         <Favourites
           isFavourite={
-            favouritesList && favouritesList.length>0 && 
-            favouritesList.findIndex(item => item.id == data.id)
+            props.favouritesList && props.favouritesList.length>0 && 
+            props.favouritesList.findIndex(item => item.id == data.id)
           }
-          addToFavourites={addToFavourite}
-          removeFromFavourites={removeFromFavourites}
+          addToFavourites={()=>props.addToFavourites(data)}
+          removeFromFavourites={()=>props.removeFromFavourites(data)}
         />
       </View>
     </>
   );
 }
-export default withNavigation(VideoListComponent);
+const videoListWithNav=withNavigation(VideoListComponent)
+const mapStateToProps = state => ({
+  favouritesList: state.channels.favouriteChannels
+});
+export default connect(mapStateToProps,{addToFavourites,removeFromFavourites})(videoListWithNav)

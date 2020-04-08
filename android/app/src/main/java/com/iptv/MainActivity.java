@@ -1,4 +1,4 @@
-package com.gifibre;
+package com.gibstat;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

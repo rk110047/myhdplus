@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+import { ColorConst } from "../../utils/Constants";
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
     },
     logoContainer:{
         justifyContent: 'center',
-        backgroundColor:"#d9d9d9"
+        backgroundColor:ColorConst.backgroundColor
     },
     innerContainer: {
         flexDirection: 'row',
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     },
     activeListName: {
         // fontWeight: 'bold',
-        color: '#FFC200'
+        color: ColorConst.themeColor
     },
     // activeContainer: {
     //     paddingLeft: 14,
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
         height: height * 0.04
     },
     activeImage: {
-        tintColor: '#FFC200',
+        tintColor: ColorConst.themeColor,
         width: width * 0.09,
         height: height * 0.04
     }

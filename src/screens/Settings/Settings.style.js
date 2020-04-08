@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+import { ColorConst } from "../../utils/Constants";
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
         height: height * 0.03,
         width: 20,
         borderRadius: 10,
-        backgroundColor: '#FFC200',
+        backgroundColor: ColorConst.themeColor,
         borderWidth: 1,
         borderColor: '#FFFFFF'
     },
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 11,
     },
     box2: {
-        backgroundColor: '#FFC200',
+        backgroundColor: ColorConst.themeColor,
         borderRadius: 8,
         width: width * 0.35,
         height: height * 0.07,
@@ -103,7 +104,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 11,
     },
     box3: {
-        backgroundColor: '#FFC200',
+        backgroundColor: ColorConst.themeColor,
         borderRadius: 8,
         width: width * 0.45,
         height: height * 0.07,

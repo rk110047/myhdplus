@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+import { ColorConst } from "../../utils/Constants";
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
     line:{
         width:width*0.94,
         borderWidth:1.5,
-        borderColor:'#FFC200',
+        borderColor:ColorConst.themeColor,
         marginVertical:6
          
     }
