@@ -10,8 +10,10 @@ class LiveTv extends Component {
     super(props);
   }
 componentDidMount(){
-  StatusBar.setHidden(true);
+  // StatusBar.setHidden(true);
+StatusBar.setBackgroundColor("black")
 }
+
   navbarList = () => {
     const {categories} = this.props;
   return (

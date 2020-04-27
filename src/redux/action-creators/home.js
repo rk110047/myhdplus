@@ -8,14 +8,14 @@ import {
   GET_USER_PROFILE_SETTINGS,
   GET_PACKAGES,
 } from '../action-types/home';
-import QueryUtil from '../../utils/QueryUtil';
+import QueryUtil, { axiosInstance } from '../../utils/QueryUtil';
 import store from '../store';
 import AsyncStorage from '@react-native-community/async-storage';
 // the action creator to get the channels.
 export const getChannels = () => async dispatch => {
   QueryUtil.get('/livetv/channels?limit=1000')
     .then(async response => {
-      console.log('response in channels', response);
+      console.log('response in livetv channels', response);
 
       if (response.status == 200){
         await dispatch({type: GET_CHANNELS, payload: response.data.results});
@@ -23,7 +23,7 @@ export const getChannels = () => async dispatch => {
       }
     })
     .catch(err => {
-      console.log('error in getting channels', err);
+      console.log('error in getting live tv channels', err);
     });
 };
 

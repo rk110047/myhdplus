@@ -629,7 +629,7 @@
 			baseConfigurationReference = 78B8F16E76A2E06551C7DF7D /* Pods-Iptv.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = A4W39LTCG9;
 				INFOPLIST_FILE = Iptv/Info.plist;
@@ -650,7 +650,7 @@
 			baseConfigurationReference = C2430CAF93369D41F5785811 /* Pods-Iptv.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = A4W39LTCG9;
 				INFOPLIST_FILE = Iptv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -25,7 +25,7 @@ import Orientation from 'react-native-orientation-locker';
 const {width,height}=Dimensions.get("window")
 class HomeScreenComponent extends Component {
   constructor(props){
-    super(props)
+    super(props);
     this.state={videoHeight:200,
     hideHeader:false,
     favouritesList:[]
@@ -60,6 +60,7 @@ class HomeScreenComponent extends Component {
       <BaseScreen 
       hideHeader={this.state.hideHeader}
       logo search>
+        <StatusBar backgroundColor='black' hidden={false}/>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.container}>
             <View style={{flex: 1, height: this.state.videoHeight, width: '100%'}}>
@@ -73,7 +74,7 @@ class HomeScreenComponent extends Component {
            }
            }
            changeHeight={(videoHeight,hideHeader)=>{
-            StatusBar.setHidden(true) 
+            StatusBar.setHidden(hideHeader) 
             this.setState({videoHeight,hideHeader})}}
            />
             </View>

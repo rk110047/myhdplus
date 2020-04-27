@@ -28,6 +28,7 @@ export default class VideoPlayerComponent extends Component {
             source={{
               uri: channel_url,
             }}
+            
             // Can be a URL or a local file.
             resizeMode="stretch"
             toggleResizeModeOnFullscreen={true}
@@ -45,7 +46,8 @@ export default class VideoPlayerComponent extends Component {
             //   this.props.disableSeekbar ? this.props.disableSeekbar : false
             // }
             onEnterFullscreen={() => {
-              this.props.changeHeight(width, true);
+
+              this.props.changeHeight(width-20, true);
               Orientation.lockToLandscapeLeft();
             }}
             onExitFullscreen={() => {

@@ -21,7 +21,7 @@ const Header = (props) =>
                 <Image source={drawer} style={styles.image} />
             </TouchableHighlight> :
             <TouchableHighlight underlayColor='#212121' onPress={() => props.navigation.openDrawer()} >
-                <Image source={drawer} style={styles.image} />
+                <Image source={toggleBtnImg} style={styles.image} />
             </TouchableHighlight>}
         {/* {props.logo && <Image source={headerLogo} style={styles.logo} />} */}
         {/* {props.search && <Image source={searchImg} style={styles.image} />} */}
