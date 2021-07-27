@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 14,
     borderBottomWidth: 3,
     height: height * 0.06,
-    borderColor: '#13a4f3',
+    borderColor: '#E64628',
     paddingBottom: 15,
   },
   navContainer: {
@@ -34,14 +34,14 @@ const styles = StyleSheet.create({
   },
   navText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: width > 600 ? 22 : 16,
     fontWeight: 'normal',
     marginHorizontal: 5,
   },
   activeNavText: {
     fontWeight: 'bold',
-    fontSize: 18,
-    color: 'white',
+    fontSize: width > 600 ? 22 : 18,
+    color: '#E64628',
     marginHorizontal: 5,
   },
   sportContainer: {
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   sportList: {
     flexDirection: 'column',
     width: "95%",
-    marginVertical: height * 0.03,
+    marginVertical: height * 0.03
   },
   imageContainer: {
     flex: 2,
@@ -67,14 +67,14 @@ const styles = StyleSheet.create({
   },
 
   titleText: {
-    fontSize: 16,
+    fontSize:  width > 600 ? 22 : 16,
     fontWeight: 'bold',
     color: '#FFFFFF',
   },
   descriptionText: {
     color: '#FFFFFF',
     fontWeight: 'normal',
-    fontSize: 12,
+    fontSize:  width > 600 ? 20 : 12,
     marginVertical: 4,
   },
   sportImage: {

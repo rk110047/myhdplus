@@ -35,15 +35,15 @@ this.props.getCategories()
   };
   sportsList = () => {
     const {categoryChannels} = this.props;
+    console.log("hiiii1",categoryChannels)
     return (
       categoryChannels &&
       categoryChannels.map((sport, i) => {
-        let is_adultCategoryArr = this.props.categories.filter(
-          item => item.id == sport.category[0],
-        );
+        let is_adultCategoryArr=this.props.categories.filter((item)=>item.id==sport.category[0])
+        // console.log("test", is_adultCategoryArr[0].is_adult)
         return (
           <VideoListComponent
-            is_adult={is_adultCategoryArr && is_adultCategoryArr[0].is_adult}
+            // is_adult={is_adultCategoryArr && is_adultCategoryArr[0].is_adult}
             data={sport}
             radio={true}
           />
@@ -76,18 +76,19 @@ function mapStateToProps(state) {
     categories: state.radio.radioCategories,
     channels: state.radio.radioChannels,
     categoryChannels: state.radio.radioChannels.filter(
-      item => item.category[0] == state.radio.selectedCategoryId,
+      item => item.category == state.radio.selectedCategoryId,
     ),
     selectedCategoryId: state.radio.selectedCategoryId,
   };
 }
 const mapDispatchToProps = dispatch => {
   return {
+    getChannels:()=>dispatch(getradioChannels()),
+      getCategories:()=>dispatch(getradioCategories()),
     // dispatching plain actions
     navClickHandler: id =>
-      dispatch({type: 'CHANGE_LIVETV_NAVIGATION_STATUS', payload: id}),
-      getChannels:()=>dispatch(getradioChannels()),
-      getCategories:()=>dispatch(getradioCategories())
+      dispatch({type: 'CHANGE_RADIO_NAVIGATION_STATUS', payload: id}),
+      
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Radio);

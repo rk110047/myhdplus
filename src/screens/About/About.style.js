@@ -33,23 +33,23 @@ const styles = StyleSheet.create({
     },
     text:{
         color:'#FFFFFF',
-        fontSize:14,
+        fontSize: width > 600 ? 20 : 14,
         fontWeight:'normal',
         marginVertical:4
     },
     about:{
         color:'#FFFFFF',
-        fontSize:18,
+        fontSize: width > 600 ? 22 : 18,
         fontWeight:'bold',
         marginVertical:10,
         marginTop:height*0.04
     },
     description:{
         color:'#FFFFFF',
-        fontSize:14,
+        fontSize: width > 600 ? 20 : 14,
         fontWeight:'400',
-        marginVertical:6
-
+        marginVertical:6,
+        alignSelf:"flex-start"
     },
     line:{
         width:width*0.94,

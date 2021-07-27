@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     },
     logoContainer:{
         justifyContent: 'center',
-        backgroundColor:ColorConst.backgroundColor
+        backgroundColor:"#0D2434"
     },
     innerContainer: {
         flexDirection: 'row',
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     listName: {
         marginHorizontal: width * 0.05,
         color: '#FFFFFF',
-        fontSize: 14,
+        fontSize: width > 600 ? 22 : 14,
         fontWeight: '400'
     },
     activeListName: {

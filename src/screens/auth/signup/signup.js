@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
   Text,
   View,
@@ -9,9 +9,11 @@ import {
   KeyboardAvoidingView,
   TouchableOpacity,
 } from 'react-native';
-import {styles} from './signup.style';
-import logo from '../../../../assets/imgs/gibstat.png';
-import {userRegister} from '../../../redux/action-creators/auth';
+import { styles } from './signup.style';
+import logo from '../../../../assets/imgs/gibstat.jpeg';
+import { userRegister } from '../../../redux/action-creators/auth';
+import Toast from 'react-native-simple-toast';
+
 
 class SignupScreenComponent extends Component {
   state = {
@@ -21,13 +23,19 @@ class SignupScreenComponent extends Component {
   };
 
   onChangeText = (key, val) => {
-    this.setState({[key]: val});
+    this.setState({ [key]: val });
   };
 
   userRegister = async () => {
-    if (!this.state.email) alert('please enter email');
-    else if (!this.state.password) alert('please enter password');
-    else if (!this.state.confirmed_password) alert('please re-enter password');
+    if (!this.state.email)
+      // alert('please enter email');
+      Toast.show('Please Enter Email', Toast.LONG);
+    else if (!this.state.password)
+      // alert('please enter password');
+      Toast.show('Please Enter Password', Toast.LONG);
+    else if (!this.state.confirmed_password)
+      // alert('please re-enter password');
+      Toast.show('Please Re-Enter Password', Toast.LONG);
     else {
       this.props.register(this.state, this.props.navigation);
     }
@@ -87,6 +95,6 @@ const mapStateToProps = state => ({
   userRegister: state.user.user,
 });
 
-export default connect(mapStateToProps, {register: userRegister})(
+export default connect(mapStateToProps, { register: userRegister })(
   SignupScreenComponent,
 );

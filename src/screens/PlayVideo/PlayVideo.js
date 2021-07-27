@@ -18,7 +18,8 @@ import data from "../LiveTv/JsonData";
 import {
   getCategories,
   getChannels,
-  getVideos
+  getVideos,
+  getRecordVideos
 } from "../../redux/action-creators/home";
 
 const channels = [
@@ -51,6 +52,7 @@ class PlayVideo extends Component {
     const api_token = await AsyncStorage.getItem("api_token");
     const renderChannels = await this.props.getChannels(api_token);
     const renderVideos = await this.props.getVideos(api_token);
+    const renderRecordVideos = await this.props.getRecordVideos(api_token);
     const renderCategories = await this.props.getCategories(api_token);
   };
 
@@ -253,11 +255,13 @@ const mapStateToProps = state => ({
   channels: state.channels.channels,
   recVideos: state.channels.recVideos,
   archVideos: state.channels.archVideos,
+  recordVideos: state.channels.recordVideos,
   categories: state.channels.categories
 });
 
 export default connect(mapStateToProps, {
   getChannels,
   getVideos,
+  getRecordVideos,
   getCategories
 })(PlayVideo);

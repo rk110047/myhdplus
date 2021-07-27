@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Dimensions } from 'react-native';
 import BaseScreen from '../base/BaseScreen';
 import { TextInput, TouchableHighlight } from 'react-native-gesture-handler';
 import { styles } from './ChangePassword.style';
+
+
+const width = Dimensions.get('window').width;
+
+
 
 export default class ChangePassword extends Component {
 
@@ -26,10 +31,10 @@ export default class ChangePassword extends Component {
 
 
     render() {
-        const emailStyle = [styles.textInput, { backgroundColor: '#E0E0E0' }]
-        const otpStyle = [styles.textInput, { backgroundColor: '#FFFFFF' }]
+        const emailStyle = [styles.textInput, { backgroundColor: '#E0E0E0' , fontSize: width > 600 ? 22 : 14}]
+        const otpStyle = [styles.textInput, { backgroundColor: '#FFFFFF', fontSize: width > 600 ? 22 : 14 }]
         return (
-            <BaseScreen centerText='Change Password' arrow>
+            <BaseScreen centerText='Change Password' >
                 <View style={styles.container}>
                 <Text style={styles.text}>An OTP is sent to your registered Email</Text>
                     <TextInput

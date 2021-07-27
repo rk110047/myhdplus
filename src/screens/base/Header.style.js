@@ -11,16 +11,18 @@ const styles = StyleSheet.create({
         // marginTop: 28,
         // marginBottom: 15,
         paddingVertical:15,
+        paddingHorizontal:20,
         backgroundColor: ColorConst.backgroundColor,
         alignItems: 'center',
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
+        width:"100%",
     },
     image: {
         resizeMode: 'contain',
         height: height * 6 / 100,
         width: width * 10 / 100,
-        marginLeft:5
+        // marginLeft:5
     },
     logo: {
         height: height * 8 / 100,

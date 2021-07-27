@@ -6,7 +6,7 @@ import {
     AsyncStorage,
 } from 'react-native';
 import {styles} from "./SplashScreen.style";
-import iptv_logo from  '../../../assets/imgs/gibstat.png';
+import iptv_logo from  '../../../assets/imgs/gibstat.jpeg';
 
 class SplashScreenComponent extends Component {
     static navigationOptions = {
@@ -20,8 +20,9 @@ class SplashScreenComponent extends Component {
 
     loadApp = async() => {
             const userToken = await AsyncStorage.getItem('api_token');
+            const number_verified = await AsyncStorage.getItem('number_verified');
             console.log("userToken",userToken)
-            this.props.navigation.navigate(userToken ? "Main" : "Auth");
+            this.props.navigation.navigate(userToken && number_verified ? "Main" : "Auth");
     }
 
     render() {

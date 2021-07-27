@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         marginVertical: 10
     },
     text: {
-        fontSize: 18,
+        fontSize: width > 600 ? 22 : 18,
         fontWeight: '400',
         color: '#FFFFFF'
     },
@@ -44,8 +44,8 @@ const styles = StyleSheet.create({
         width: width * 0.90,
     },
     icon: {
-        width: 24,
-        height: 24,
+        width: width > 600 ? 30 : 24,
+        height: width > 600 ? 30 : 24,
         resizeMode: 'contain',
         marginRight: width * 0.06
     },
@@ -131,6 +131,20 @@ const styles = StyleSheet.create({
         color:'#FF0000',
         fontSize:12,
         fontWeight:'400'
+    },
+    textInputBtn:{
+        borderRadius: 8,
+            opacity: 1,
+            width: "35%",
+            height: 52,
+        backgroundColor: ColorConst.themeColor,
+        alignItems:'center',
+        justifyContent:'center',
+        marginBottom: 16,
+    },
+    btnText :{
+        fontSize:width > 600 ? 20 : 18,
+        color:'white'
     }
 
 

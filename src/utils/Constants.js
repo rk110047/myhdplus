@@ -1,5 +1,5 @@
 export const ColorConst={
-    backgroundColor:"rgb(30,32,34)",
+    backgroundColor:"#0F2D41",
     textColor:"rgb(218,218,219)",
-    themeColor:"#rgb(230,150,53)"
+    themeColor:"#E64628"
 }

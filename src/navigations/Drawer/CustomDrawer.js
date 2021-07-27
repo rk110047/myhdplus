@@ -20,23 +20,27 @@ const List = [
         image: require('../../../assets/imgs/liveTv.png'),
         name: 'Live Tv',
         screen:'LiveTv'
-    }, {
-        image: require('../../../assets/imgs/videoOnDemand.png'),
-        name: 'Video On Demand',
-        screen:'VideoOnDemand'
-    }, {
+    }, 
+    // {
+    //     image: require('../../../assets/imgs/videoOnDemand.png'),
+    //     name: 'Video On Demand',
+    //     screen:'VideoOnDemand'
+    // }, 
+    {
         image: require('../../../assets/imgs/archiveTv.png'),
-        name: 'Archive Tv',
+        name: 'Kids',
         screen:'ArchiveTv'
-    }, {
+    }, 
+    {
         image: require('../../../assets/imgs/radio.png'),
         name: 'Radio',
         screen:'Radio'
-    }, {
-        image: require('../../../assets/imgs/recordedVideo.png'),
-        name: 'Recorded Video',
-        screen:'RecordedVideo'
     }, 
+    // {
+    //     image: require('../../../assets/imgs/recordedVideo.png'),
+    //     name: 'Recorded Video',
+    //     screen:'RecordedVideo'
+    // }, 
     // {
     //     image: require('../../../assets/imgs/notifications.png'),
     //     name: 'Notifications',
@@ -56,7 +60,12 @@ const List = [
         image: require('../../../assets/imgs/about.png'),
         name: 'About',
         screen:'About'
-    }
+    },
+    {
+        image: require('../../../assets/imgs/videoOnDemand.png'),
+        name: 'Logout',
+        screen:'Logout'
+    }, 
 ]
 export default class CustomDrawer extends Component {
 
@@ -118,9 +127,9 @@ export default class CustomDrawer extends Component {
 
     render() {
         return (
-                <ScrollView style={{backgroundColor:ColorConst.backgroundColor}}>
+                <ScrollView style={{backgroundColor:"#0D2434"}}>
                     <View style={[styles.logoContainer]}>
-                        <Image source={require('../../../assets/imgs/gibstat.png')} style={styles.logo}></Image>
+                        <Image source={require('../../../assets/imgs/gibstat.jpeg')} style={styles.logo}></Image>
                     </View>
                     {this.renderData()}
                 </ScrollView>

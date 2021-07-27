@@ -11,7 +11,9 @@ import { Support } from '../screens/Support/Support';
 import { RecordedVideo } from '../screens/RecordedVideo/RecordedVideo';
 import  VideoOnDemand  from '../screens/VideoOnDemand/VideoOnDemand';
 import { Settings } from '../screens/Settings/Settings';
+import { Logout } from '../screens/Settings/Logout';
 import { About } from '../screens/About/About';
+import { TandC } from '../screens/About/TandC';
 
 export {
     SignupScreenComponent,
@@ -23,9 +25,11 @@ export {
     Radio,
     RecordedVideo,
     Settings,
+    Logout,
     Support,
     VideoOnDemand,
     Notifications,
     About,
-    VideoOnDemandChannelScreen
+    TandC,
+    VideoOnDemandChannelScreen,
 }

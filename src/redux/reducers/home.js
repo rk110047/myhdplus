@@ -2,7 +2,9 @@ import {
   GET_CHANNELS,
   GET_RECOMMENDED_VIDEOS,
   GET_ARCHIVED_VIDEOS,
+  GET_RECORD_VIDEOS,
   GET_CATEGORIES,
+  GET_CATEGORIES_HOME,
   CHANGE_LIVETV_NAVIGATION_STATUS,
   GET_HOME_SETTINGS,
   ADD_NEW_FAVOURITES,
@@ -16,6 +18,7 @@ const initial_state = {
   channels: [],
   recVideos: [],
   archVideos: [],
+  recordVideos: [],
   categories: [],
   selectedCategoryId: 1,
   homeSettings:{},
@@ -47,6 +50,16 @@ export default (state = initial_state, {type, payload}) => {
         ...state,
         archVideos: archivedResults,
       };
+      case GET_RECORD_VIDEOS:
+      let recordResults=payload;
+      recordResults && recordResults.map((item)=>{
+        item.channel_image=item.recording_image
+        item.channel_url=item.output_url
+      })
+      return {
+        ...state, 
+        recordVideos: recordResults,
+      };
     case GET_CATEGORIES:
       let categoryResults = payload;
       categoryResults &&
@@ -59,8 +72,21 @@ export default (state = initial_state, {type, payload}) => {
         categories: payload,
         selectedCategoryId: payload[0].id,
       };
+      case GET_CATEGORIES_HOME:
+      let categoryResultshome = payload;
+      categoryResultshome &&
+      categoryResultshome.map((item, key) => {
+          if (key != 1) item.status = false;
+          else item.status = true;
+        });
+      return {
+        ...state,
+        categorieshome: payload,
+        selectedCategoryIdhome: payload[1].id,
+      };
     case CHANGE_LIVETV_NAVIGATION_STATUS:
       let newCategories = state.categories.map(item => {
+        console.log("ABC" )
         if (item.id == payload) {
           return {
             ...item,
@@ -74,8 +100,10 @@ export default (state = initial_state, {type, payload}) => {
       });
       return {
         ...state,
+        categorieshome: newCategories,
         categories: newCategories,
         selectedCategoryId: payload,
+        selectedCategoryIdhome: payload,
       };
       case GET_HOME_SETTINGS:
         return{

@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'Iptv' do
-  # Pods for Iptv
+target 'MyHDPLUS' do
+  # Pods for MyHDPLUS
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -34,7 +34,9 @@ target 'Iptv' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
   pod 'react-native-video', :path => '../node_modules/react-native-video/react-native-video.podspec'
-  target 'IptvTests' do
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
+  target 'MyHDPLUSTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -42,10 +44,10 @@ target 'Iptv' do
   use_native_modules!
 end
 
-target 'Iptv-tvOS' do
-  # Pods for Iptv-tvOS
+target 'MyHDPLUS-tvOS' do
+  # Pods for MyHDPLUS-tvOS
 
-  target 'Iptv-tvOSTests' do
+  target 'MyHDPLUS-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

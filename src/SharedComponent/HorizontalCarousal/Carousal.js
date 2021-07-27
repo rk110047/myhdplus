@@ -10,10 +10,11 @@ function Carousal(props) {
         return props.channels && props.channels.map((channel, i) => {
             return (
                 <TouchableOpacity
-                onPress={ props.onPressVideo?()=>props.onPressVideo(channel):()=>props.navigation.navigate('VideoDetailsScreen',{data:channel})}
+                onPress={ props.loginscreen ? props.onPressVideo?()=>props.onPressVideo():()=>props.navigation.navigate('Login') : props.onPressVideo?()=>props.onPressVideo(channel):()=>props.navigation.navigate('VideoDetailsScreen',{data:channel})}
                 key={i} style={styles.channel}>
                     <Image source={{uri:channel.channel_image}} style={styles.image} />
                 </TouchableOpacity>
+                
             )
         })
     }

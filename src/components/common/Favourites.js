@@ -10,7 +10,7 @@ export default function Favourites(props) {
       }
       style={{
         borderColor: 'white',
-        marginRight: 20,
+        // marginRight: 20,
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',

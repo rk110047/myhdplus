@@ -1,7 +1,10 @@
 import {
-    StyleSheet
+    StyleSheet, Dimensions
 } from "react-native";
 import { ColorConst } from "../../../utils/Constants";
+
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     container: {
@@ -27,7 +30,7 @@ const styles = StyleSheet.create({
         height: 52,
         textAlign: 'left',
         paddingLeft: 48,
-        fontSize: 14,
+        fontSize: width > 600 ? 20 : 14,
         marginBottom: 16,
     },
     textInputBtn: {
@@ -41,19 +44,19 @@ const styles = StyleSheet.create({
         marginBottom: 16,
     },
     btnText: {
-        fontSize: 18,
+        fontSize: width > 600 ? 20 : 18,
         color: 'white'
     },
     linkText: {
         textAlign: 'center',
         color: '#ffffff',
-        fontSize: 14,
+        fontSize: width > 600 ? 20 : 14,
         marginBottom: 16,
     },
     linkText2: {
         textAlign: 'center',
         color: ColorConst.themeColor,
-        fontSize: 16,
+        fontSize: width > 600 ? 20 : 16,
     }
 
 });

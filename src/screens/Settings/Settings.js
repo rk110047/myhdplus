@@ -3,7 +3,8 @@ import {View, Text, Image, TouchableHighlight} from 'react-native';
 import BaseScreen from '../base/BaseScreen';
 import {styles} from './Settings.style';
 import key from '../../../assets/imgs/key.png';
-import exit from '../../../assets/imgs/exit.png';
+import status from '../../../assets/imgs/status.png';
+import update from '../../../assets/imgs/update.png';
 import {Dialog} from 'react-native-simple-dialogs';
 import {TextInput} from 'react-native-gesture-handler';
 import ChangePassword from '../ChangePassword/ChangePassword';
@@ -20,7 +21,15 @@ class Settings extends Component {
     pin: '6666',
     wrongPin: false,
     enable: false,
+    token: ""
   };
+
+  async componentDidMount() {
+    const token = await AsyncStorage.getItem('api_token')
+    this.setState({
+      token
+    })
+  }
 
   openDialog = show => {
     this.setState({showDialog: show});
@@ -76,6 +85,22 @@ class Settings extends Component {
     }
   };
 
+  logoutuser = () => {
+    console.log(this.state.token)
+    fetch('http://196.29.238.110/api/v1/auth/logout/', {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + this.state.token,
+        'Content-Type': 'application/json'
+      },
+    }).then((response) => response.json())
+      .then((res) => {
+        console.log(res)
+        AsyncStorage.clear();
+        this.props.navigation.navigate('HomeScreenLogin');
+      })
+  }
+
   render() {
     const _pinStyle =
       this.state.wrongPin == true
@@ -88,7 +113,7 @@ class Settings extends Component {
     return (
       <BaseScreen centerText="Settings">
         <View style={styles.container}>
-          <View style={styles.innerContainer}>
+          {/* <View style={styles.innerContainer}>
             <Text style={styles.text}>Enable Strict Content</Text>
             <TouchableHighlight
               underlayColor="#212121"
@@ -97,24 +122,40 @@ class Settings extends Component {
                 <View style={styles.innerImage}></View>
               </View>
             </TouchableHighlight>
-          </View>
-          <TouchableHighlight
+          </View> */}
+          {/* <TouchableHighlight
             underlayColor="#212121"
             onPress={() => this.props.navigation.navigate('ChangePassword')}>
             <View style={styles.changeContainer}>
               <Image source={key} style={styles.icon} />
               <Text style={styles.text}>Change Password</Text>
             </View>
-          </TouchableHighlight>
+          </TouchableHighlight> */}
+          {/* <TouchableHighlight
+            underlayColor="#212121"
+            // onPress={() => {
+            //   // AsyncStorage.clear();
+            //   // this.props.navigation.navigate('Login');
+            //   this.logoutuser()
+            // }}
+            >
+            <View style={styles.changeContainer}>
+              <Image source={status} style={styles.icon} />
+              <Text style={styles.text}>Subscription status</Text>
+            </View>
+          </TouchableHighlight> */}
           <TouchableHighlight
             underlayColor="#212121"
-            onPress={() => {
-              AsyncStorage.clear();
-              this.props.navigation.navigate('Login');
-            }}>
+            // onPress={() => {
+              // AsyncStorage.clear();
+              // this.props.navigation.navigate('Login');
+              // this.logoutuser()
+            // }
+            // }
+            >
             <View style={styles.changeContainer}>
-              <Image source={exit} style={styles.icon} />
-              <Text style={styles.text}>Logout</Text>
+              <Image source={update} style={styles.icon} />
+              <Text style={styles.text}>Check for new update</Text>
             </View>
           </TouchableHighlight>
         </View>

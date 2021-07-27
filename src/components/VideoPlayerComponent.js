@@ -1,19 +1,54 @@
 import React, {Component} from 'react';
 import VideoPlayer from 'react-native-video-controls';
-import {View, StyleSheet, Dimensions, ActivityIndicator} from 'react-native';
+import {View, StyleSheet, Dimensions, ActivityIndicator, BackHandler} from 'react-native';
 import KeepAwake from 'react-native-keep-awake';
 import Orientation from 'react-native-orientation-locker';
+
+
 
 const {width, height} = Dimensions.get('window');
 export default class VideoPlayerComponent extends Component {
   constructor(props) {
     super(props);
+    this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
     this.state = {
       videoLoading: false,
+      videodata:{}
     };
+    
   }
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
+}
+componentWillUnmount() {
+  BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
+}
+handleBackButtonClick() {
+  if( Dimensions.get('window').width > Dimensions.get('window').height )
+  {
+  this.props.changeHeight(200, false);
+  Orientation.unlockAllOrientations();
+  return true;
+  }
+}
+
+gocatchup = () =>{
+  this.state.videodata = this.props.data;
+  this.state.videodata.catchup_url = this.props.data.catchup_url;
+  this.state.videodata.channel_url = this.props.data.channel_url;
+  this.setState({ data : this.state.videodata})
+}
+
   render() {
-    const {channel_url, channel_image} = this.props.data;
+    let channel_url;
+    const { channel_image } = this.props.data;
+    if(this.props.data.catchup_recording_hours > 0) {
+    channel_url = this.props.data.catchup_url;
+    }
+    else
+    {
+    channel_url = this.props.data.channel_url;
+    }
     return (
       <>
         {this.state.videoLoading && (
@@ -26,11 +61,11 @@ export default class VideoPlayerComponent extends Component {
             poster={channel_image}
             posterResizeMode="stretch"
             source={{
-              uri: channel_url,
+              uri: channel_url, type:"m3u8"
             }}
-            
+            currentPlaybackTime={10000}
             // Can be a URL or a local file.
-            resizeMode="stretch"
+            // resizeMode="stretch"
             toggleResizeModeOnFullscreen={true}
             mute={false}
             volume={1}
@@ -42,21 +77,30 @@ export default class VideoPlayerComponent extends Component {
             disableTimer={
               this.props.disableTimer ? this.props.disableTimer : false
             }
-            // disableSeekbar={
-            //   this.props.disableSeekbar ? this.props.disableSeekbar : false
-            // }
+            disableSeekbar={
+              this.props.disableSeekbar ? this.props.disableSeekbar : false
+            }
+            disablePlayPause={
+              this.props.disablePlayPause ? this.props.disablePlayPause : false
+            }
+            onBack={()=>{
+              this.handleBackButtonClick();
+            }}
             onEnterFullscreen={() => {
 
-              this.props.changeHeight(width-20, true);
+              this.props.changeHeight(width, true);
               Orientation.lockToLandscapeLeft();
             }}
             onExitFullscreen={() => {
               this.props.changeHeight(200, false);
               Orientation.unlockAllOrientations();
             }}
-            disableBack={
-              this.props.disableBack ? this.props.disableBack : false
-            }
+            onPlay = {() => {
+              this.gocatchup()
+            }}
+            // disableBack={
+            //   this.props.disableBack ? this.props.disableBack : false
+            // }
             onReadyForDisplay={() => KeepAwake.activate()}
             onError={error => {
               KeepAwake.deactivate();

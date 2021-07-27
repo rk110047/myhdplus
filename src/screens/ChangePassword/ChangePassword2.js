@@ -29,7 +29,7 @@ export default class ChangePassword2 extends Component {
         // const textStyle = [styles.textInput, { backgroundColor: '#E0E0E0' }]
         const textStyle = [styles.textInput, { backgroundColor: '#FFFFFF' }]
         return (
-            <BaseScreen centerText='Change Password' arrow >
+            <BaseScreen centerText='Change Password'  >
                 <View style={styles.container}>
                     <TextInput
                         value={this.state.data.email}

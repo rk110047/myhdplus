@@ -4,6 +4,7 @@ import QueryUtil from "../../utils/QueryUtil";
 export const getvodChannels = () => async dispatch => {
     QueryUtil.get('/vods/contents?limit=100')
       .then(response => {
+        console.log(response.data,"naughtyy")
         if (response.status == 200)
           dispatch({type: GET_VOD_CHANNELS, payload: response.data.results});
       })
@@ -14,7 +15,8 @@ export const getvodChannels = () => async dispatch => {
   
   export const getvodCategories = token => async dispatch => {
     QueryUtil.get('/vods/categories/')
-      .then(response => {
+        .then(response => { 
+        console.log(response.data,"naughtyz")
         if (response.status == 200) {
           dispatch({type: GET_VOD_CATEGORIES, payload: response.data.results});
         }

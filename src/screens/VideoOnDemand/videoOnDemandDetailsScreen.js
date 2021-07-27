@@ -17,7 +17,7 @@ export default class VideoOnDemandDetailsScreen extends Component {
     super(props);
     this.state = {
       videoData: {},
-      videoHeight: 200,
+      videoHeight: width > 600 ? 400 : 200,
       hideHeader: false,
     };
   }
@@ -54,10 +54,10 @@ export default class VideoOnDemandDetailsScreen extends Component {
           </View>
           <View style={{height: height - 200, paddingHorizontal: 10}}>
             <Text
-              style={[styles.titleText, {marginVertical: 15, fontSize: 20}]}>
+              style={[styles.titleText, {marginVertical: 15, fontSize: width > 600 ? 22 : 20}]}>
               {this.state.videoData.name}
             </Text>
-            <Text style={[styles.titleText, {marginBottom: 8, fontSize: 14}]}>
+            <Text style={[styles.titleText, {marginBottom: 8, fontSize: width > 600 ? 20 : 14}]}>
               {this.state.videoData.description}
             </Text>
             {this.state.videoData.EPG_file && (

@@ -14,8 +14,36 @@ componentDidMount(){
 StatusBar.setBackgroundColor("black")
 }
 
+// navbarListhd = () => {
+//   const {categories} = this.props;
+  
+// return (
+//     categories &&
+//     categories.map((nav, i) => {
+//       const navTextStyle =
+//         categories[i].status == true ? styles.activeNavText : styles.navText;
+//       const navbarStyle =
+//         categories[i].status == true ? styles.activeNavbar : styles.navbar;
+//       return (
+//         nav.serial_no == 1 ? <TouchableHighlight
+//           key={i}
+//           underlayColor="#0d8ad2"
+//           onPress={() => this.props.navClickHandler(nav.id)}
+//           >
+//           <View style={navbarStyle}>
+//             <Text style={navTextStyle}>{nav && nav.name}</Text>
+//           </View>
+//         </TouchableHighlight>
+//         :
+//         null
+//       );
+//     })
+//   );
+// };
+
   navbarList = () => {
     const {categories} = this.props;
+    
   return (
       categories &&
       categories.map((nav, i) => {
@@ -24,6 +52,7 @@ StatusBar.setBackgroundColor("black")
         const navbarStyle =
           categories[i].status == true ? styles.activeNavbar : styles.navbar;
         return (
+          // nav.serial_no != 1 ? 
           <TouchableHighlight
             key={i}
             underlayColor="#0d8ad2"
@@ -33,6 +62,8 @@ StatusBar.setBackgroundColor("black")
               <Text style={navTextStyle}>{nav && nav.name}</Text>
             </View>
           </TouchableHighlight>
+          // :
+          // null
         );
       })
     );
@@ -40,6 +71,7 @@ StatusBar.setBackgroundColor("black")
 
   sportsList = () => {
     const {categoryChannels} = this.props;
+    console.log("hiiii2",categoryChannels)
     return (
       categoryChannels &&
       categoryChannels.map((sport, i) => {
@@ -56,6 +88,12 @@ StatusBar.setBackgroundColor("black")
       <BaseScreen logo={true} search={true}>
         <View style={styles.container}>
           <View style={[styles.navContainer]}>
+          {/* <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+              >
+              {this.navbarListhd()}
+            </ScrollView> */}
             <ScrollView
               horizontal={true}
               showsHorizontalScrollIndicator={false}
@@ -64,6 +102,7 @@ StatusBar.setBackgroundColor("black")
             </ScrollView>
           </View>
           <ScrollView>
+          
             <View style={styles.sportList}>{this.sportsList()}</View>
           </ScrollView>
         </View>

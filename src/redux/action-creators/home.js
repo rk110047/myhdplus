@@ -2,7 +2,9 @@ import {
   GET_CHANNELS,
   GET_RECOMMENDED_VIDEOS,
   GET_ARCHIVED_VIDEOS,
+  GET_RECORD_VIDEOS,
   GET_CATEGORIES,
+  GET_CATEGORIES_HOME,
   GET_HOME_SETTINGS,
   CHANGE_FAVOURITE_CHANNELS,
   GET_USER_PROFILE_SETTINGS,
@@ -13,12 +15,11 @@ import store from '../store';
 import AsyncStorage from '@react-native-community/async-storage';
 // the action creator to get the channels.
 export const getChannels = () => async dispatch => {
-  QueryUtil.get('/livetv/channels?limit=1000')
+  QueryUtil.get1('/livetv/channels/')
     .then(async response => {
-      console.log('response in livetv channels', response);
-
+      console.log("channels123", response.data)
       if (response.status == 200){
-        await dispatch({type: GET_CHANNELS, payload: response.data.results});
+        await dispatch({type: GET_CHANNELS, payload: response.data});
         dispatch(getProfileSettings())
       }
     })
@@ -31,7 +32,7 @@ export const getChannels = () => async dispatch => {
 export const getVideos = token => async dispatch => {
   QueryUtil.get('/archives/')
     .then(response => {
-      console.log('response in videos', response);
+      console.log('response in videos hiiii', response);
 
       if (response.status == 200 && response.data.results) {
         let recVideos = [];
@@ -50,6 +51,24 @@ export const getVideos = token => async dispatch => {
       console.log('error in getting channels', err);
     });
 };
+
+
+
+export const getRecordVideos = token => async dispatch => {
+  QueryUtil.get('/pvr/')
+    .then(response => {
+      let recdVideo = [];
+      console.log("pvr", response)
+        response.data.results.map(video => {
+          recdVideo.push(video);
+        });
+        dispatch({type: GET_RECORD_VIDEOS, payload: recdVideo});
+    })
+    .catch(err => {
+      console.log('error in getting channels', err);
+    });
+};
+
 export const getCategories = token => async dispatch => {
   QueryUtil.get('/livetv/categories/?limit=100')
     .then(response => {
@@ -61,8 +80,19 @@ export const getCategories = token => async dispatch => {
       console.log('error in getting channels', err);
     });
 };
+export const getCategorieshome = token => async dispatch => {
+  QueryUtil.get('/livetv/categories/?limit=100')
+    .then(response => {
+      if (response.status == 200) {
+        dispatch({type: GET_CATEGORIES_HOME, payload: response.data.results});
+      }
+    })
+    .catch(err => {
+      console.log('error in getting channels', err);
+    });
+};
 export const getHomeSettings = () => async dispatch => {
-  QueryUtil.get('/settings/home/')
+  QueryUtil.get1('/settings/home/')
     .then(response => {
       if (response.status == 200) {
         dispatch({type: GET_HOME_SETTINGS, payload: response.data.results});

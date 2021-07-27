@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* IptvTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* IptvTests.m */; };
+		00E356F31AD99517003FC87E /* MyHDPLUSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MyHDPLUSTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -15,11 +15,11 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* IptvTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* IptvTests.m */; };
-		3921F628DB18D5449A4F5BB8 /* libPods-Iptv-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 193B6F3535AF1C81777A8476 /* libPods-Iptv-tvOS.a */; };
-		42DBCAE8718BD12806E1DCA2 /* libPods-IptvTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79C3E19C22D066D679195BFF /* libPods-IptvTests.a */; };
-		99AFFF72D4A4494A4092CF11 /* libPods-Iptv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AC72CCE4D1A8CD7C25228E /* libPods-Iptv.a */; };
-		C7C5D729A71B5AA7921FAAC3 /* libPods-Iptv-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CD1CDDD742B201084013A9 /* libPods-Iptv-tvOSTests.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* MyHDPLUSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MyHDPLUSTests.m */; };
+		3921F628DB18D5449A4F5BB8 /* libPods-MyHDPLUS-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 193B6F3535AF1C81777A8476 /* libPods-MyHDPLUS-tvOS.a */; };
+		42DBCAE8718BD12806E1DCA2 /* libPods-MyHDPLUSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79C3E19C22D066D679195BFF /* libPods-MyHDPLUSTests.a */; };
+		99AFFF72D4A4494A4092CF11 /* libPods-MyHDPLUS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AC72CCE4D1A8CD7C25228E /* libPods-MyHDPLUS.a */; };
+		C7C5D729A71B5AA7921FAAC3 /* libPods-MyHDPLUS-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CD1CDDD742B201084013A9 /* libPods-MyHDPLUS-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,43 +28,43 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = Iptv;
+			remoteInfo = MyHDPLUS;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "Iptv-tvOS";
+			remoteInfo = "MyHDPLUS-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* IptvTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IptvTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* MyHDPLUSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyHDPLUSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* IptvTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IptvTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Iptv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Iptv.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Iptv/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Iptv/AppDelegate.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* MyHDPLUSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyHDPLUSTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* MyHDPLUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHDPLUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MyHDPLUS/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = MyHDPLUS/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Iptv/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Iptv/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Iptv/main.m; sourceTree = "<group>"; };
-		193B6F3535AF1C81777A8476 /* libPods-Iptv-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Iptv-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E47B1E0B4A5D006451C7 /* Iptv-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Iptv-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* Iptv-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Iptv-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		32CD1CDDD742B201084013A9 /* libPods-Iptv-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Iptv-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4728DFAB173EE3A944280894 /* Pods-Iptv-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iptv-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Iptv-tvOSTests/Pods-Iptv-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		4DD62C5D34674128F54B3872 /* Pods-Iptv-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iptv-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Iptv-tvOS/Pods-Iptv-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		6F88395039ECD4D3D173032C /* Pods-IptvTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IptvTests.release.xcconfig"; path = "Target Support Files/Pods-IptvTests/Pods-IptvTests.release.xcconfig"; sourceTree = "<group>"; };
-		78B8F16E76A2E06551C7DF7D /* Pods-Iptv.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iptv.debug.xcconfig"; path = "Target Support Files/Pods-Iptv/Pods-Iptv.debug.xcconfig"; sourceTree = "<group>"; };
-		79C3E19C22D066D679195BFF /* libPods-IptvTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IptvTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDCB94B8B0356B136758F7E4 /* Pods-Iptv-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iptv-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Iptv-tvOS/Pods-Iptv-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		C04E90E547FE7C78B0EC4C57 /* Pods-Iptv-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iptv-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Iptv-tvOSTests/Pods-Iptv-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C2430CAF93369D41F5785811 /* Pods-Iptv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iptv.release.xcconfig"; path = "Target Support Files/Pods-Iptv/Pods-Iptv.release.xcconfig"; sourceTree = "<group>"; };
-		D2AC72CCE4D1A8CD7C25228E /* libPods-Iptv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Iptv.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5709A615DC364C6C8EFF508 /* Pods-IptvTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IptvTests.debug.xcconfig"; path = "Target Support Files/Pods-IptvTests/Pods-IptvTests.debug.xcconfig"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MyHDPLUS/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MyHDPLUS/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MyHDPLUS/main.m; sourceTree = "<group>"; };
+		193B6F3535AF1C81777A8476 /* libPods-MyHDPLUS-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyHDPLUS-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* MyHDPLUS-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyHDPLUS-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* MyHDPLUS-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MyHDPLUS-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32CD1CDDD742B201084013A9 /* libPods-MyHDPLUS-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyHDPLUS-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4728DFAB173EE3A944280894 /* Pods-MyHDPLUS-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHDPLUS-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-MyHDPLUS-tvOSTests/Pods-MyHDPLUS-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		4DD62C5D34674128F54B3872 /* Pods-MyHDPLUS-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHDPLUS-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-MyHDPLUS-tvOS/Pods-MyHDPLUS-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		6F88395039ECD4D3D173032C /* Pods-MyHDPLUSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHDPLUSTests.release.xcconfig"; path = "Target Support Files/Pods-MyHDPLUSTests/Pods-MyHDPLUSTests.release.xcconfig"; sourceTree = "<group>"; };
+		78B8F16E76A2E06551C7DF7D /* Pods-MyHDPLUS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHDPLUS.debug.xcconfig"; path = "Target Support Files/Pods-MyHDPLUS/Pods-MyHDPLUS.debug.xcconfig"; sourceTree = "<group>"; };
+		79C3E19C22D066D679195BFF /* libPods-MyHDPLUSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyHDPLUSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDCB94B8B0356B136758F7E4 /* Pods-MyHDPLUS-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHDPLUS-tvOS.release.xcconfig"; path = "Target Support Files/Pods-MyHDPLUS-tvOS/Pods-MyHDPLUS-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		C04E90E547FE7C78B0EC4C57 /* Pods-MyHDPLUS-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHDPLUS-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-MyHDPLUS-tvOSTests/Pods-MyHDPLUS-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C2430CAF93369D41F5785811 /* Pods-MyHDPLUS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHDPLUS.release.xcconfig"; path = "Target Support Files/Pods-MyHDPLUS/Pods-MyHDPLUS.release.xcconfig"; sourceTree = "<group>"; };
+		D2AC72CCE4D1A8CD7C25228E /* libPods-MyHDPLUS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyHDPLUS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5709A615DC364C6C8EFF508 /* Pods-MyHDPLUSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHDPLUSTests.debug.xcconfig"; path = "Target Support Files/Pods-MyHDPLUSTests/Pods-MyHDPLUSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42DBCAE8718BD12806E1DCA2 /* libPods-IptvTests.a in Frameworks */,
+				42DBCAE8718BD12806E1DCA2 /* libPods-MyHDPLUSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99AFFF72D4A4494A4092CF11 /* libPods-Iptv.a in Frameworks */,
+				99AFFF72D4A4494A4092CF11 /* libPods-MyHDPLUS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3921F628DB18D5449A4F5BB8 /* libPods-Iptv-tvOS.a in Frameworks */,
+				3921F628DB18D5449A4F5BB8 /* libPods-MyHDPLUS-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,20 +98,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7C5D729A71B5AA7921FAAC3 /* libPods-Iptv-tvOSTests.a in Frameworks */,
+				C7C5D729A71B5AA7921FAAC3 /* libPods-MyHDPLUS-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* IptvTests */ = {
+		00E356EF1AD99517003FC87E /* MyHDPLUSTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* IptvTests.m */,
+				00E356F21AD99517003FC87E /* MyHDPLUSTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = IptvTests;
+			path = MyHDPLUSTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -122,7 +122,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* Iptv */ = {
+		13B07FAE1A68108700A75B9A /* MyHDPLUS */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -133,7 +133,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = Iptv;
+			name = MyHDPLUS;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -141,10 +141,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				D2AC72CCE4D1A8CD7C25228E /* libPods-Iptv.a */,
-				193B6F3535AF1C81777A8476 /* libPods-Iptv-tvOS.a */,
-				32CD1CDDD742B201084013A9 /* libPods-Iptv-tvOSTests.a */,
-				79C3E19C22D066D679195BFF /* libPods-IptvTests.a */,
+				D2AC72CCE4D1A8CD7C25228E /* libPods-MyHDPLUS.a */,
+				193B6F3535AF1C81777A8476 /* libPods-MyHDPLUS-tvOS.a */,
+				32CD1CDDD742B201084013A9 /* libPods-MyHDPLUS-tvOSTests.a */,
+				79C3E19C22D066D679195BFF /* libPods-MyHDPLUSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,14 +152,14 @@
 		82DA269E3A93783303DBA038 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				78B8F16E76A2E06551C7DF7D /* Pods-Iptv.debug.xcconfig */,
-				C2430CAF93369D41F5785811 /* Pods-Iptv.release.xcconfig */,
-				4DD62C5D34674128F54B3872 /* Pods-Iptv-tvOS.debug.xcconfig */,
-				BDCB94B8B0356B136758F7E4 /* Pods-Iptv-tvOS.release.xcconfig */,
-				C04E90E547FE7C78B0EC4C57 /* Pods-Iptv-tvOSTests.debug.xcconfig */,
-				4728DFAB173EE3A944280894 /* Pods-Iptv-tvOSTests.release.xcconfig */,
-				E5709A615DC364C6C8EFF508 /* Pods-IptvTests.debug.xcconfig */,
-				6F88395039ECD4D3D173032C /* Pods-IptvTests.release.xcconfig */,
+				78B8F16E76A2E06551C7DF7D /* Pods-MyHDPLUS.debug.xcconfig */,
+				C2430CAF93369D41F5785811 /* Pods-MyHDPLUS.release.xcconfig */,
+				4DD62C5D34674128F54B3872 /* Pods-MyHDPLUS-tvOS.debug.xcconfig */,
+				BDCB94B8B0356B136758F7E4 /* Pods-MyHDPLUS-tvOS.release.xcconfig */,
+				C04E90E547FE7C78B0EC4C57 /* Pods-MyHDPLUS-tvOSTests.debug.xcconfig */,
+				4728DFAB173EE3A944280894 /* Pods-MyHDPLUS-tvOSTests.release.xcconfig */,
+				E5709A615DC364C6C8EFF508 /* Pods-MyHDPLUSTests.debug.xcconfig */,
+				6F88395039ECD4D3D173032C /* Pods-MyHDPLUSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -174,9 +174,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* Iptv */,
+				13B07FAE1A68108700A75B9A /* MyHDPLUS */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* IptvTests */,
+				00E356EF1AD99517003FC87E /* MyHDPLUSTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				82DA269E3A93783303DBA038 /* Pods */,
@@ -189,10 +189,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Iptv.app */,
-				00E356EE1AD99517003FC87E /* IptvTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* Iptv-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* Iptv-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* MyHDPLUS.app */,
+				00E356EE1AD99517003FC87E /* MyHDPLUSTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* MyHDPLUS-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* MyHDPLUS-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,9 +200,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* IptvTests */ = {
+		00E356ED1AD99517003FC87E /* MyHDPLUSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "IptvTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "MyHDPLUSTests" */;
 			buildPhases = (
 				39D6A32AF6EB208871D4C35D /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -214,14 +214,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = IptvTests;
-			productName = IptvTests;
-			productReference = 00E356EE1AD99517003FC87E /* IptvTests.xctest */;
+			name = MyHDPLUSTests;
+			productName = MyHDPLUSTests;
+			productReference = 00E356EE1AD99517003FC87E /* MyHDPLUSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* Iptv */ = {
+		13B07F861A680F5B00A75B9A /* MyHDPLUS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Iptv" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "MyHDPLUS" */;
 			buildPhases = (
 				DDC4B48187DB0848B510474F /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -234,14 +234,14 @@
 			);
 			dependencies = (
 			);
-			name = Iptv;
-			productName = Iptv;
-			productReference = 13B07F961A680F5B00A75B9A /* Iptv.app */;
+			name = MyHDPLUS;
+			productName = MyHDPLUS;
+			productReference = 13B07F961A680F5B00A75B9A /* MyHDPLUS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* Iptv-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* MyHDPLUS-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Iptv-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "MyHDPLUS-tvOS" */;
 			buildPhases = (
 				4436C21F73B373EE3F3FD666 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -254,14 +254,14 @@
 			);
 			dependencies = (
 			);
-			name = "Iptv-tvOS";
-			productName = "Iptv-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* Iptv-tvOS.app */;
+			name = "MyHDPLUS-tvOS";
+			productName = "MyHDPLUS-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* MyHDPLUS-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* Iptv-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* MyHDPLUS-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Iptv-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "MyHDPLUS-tvOSTests" */;
 			buildPhases = (
 				BB85A2439A9CC1F2F575D512 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -273,9 +273,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "Iptv-tvOSTests";
-			productName = "Iptv-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* Iptv-tvOSTests.xctest */;
+			name = "MyHDPLUS-tvOSTests";
+			productName = "MyHDPLUS-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* MyHDPLUS-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -292,7 +292,8 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = A4W39LTCG9;
+						DevelopmentTeam = UQNPBUSJ9R;
+						ProvisioningStyle = Automatic;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -305,7 +306,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Iptv" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "MyHDPLUS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -319,10 +320,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* Iptv */,
-				00E356ED1AD99517003FC87E /* IptvTests */,
-				2D02E47A1E0B4A5D006451C7 /* Iptv-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* Iptv-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* MyHDPLUS */,
+				00E356ED1AD99517003FC87E /* MyHDPLUSTests */,
+				2D02E47A1E0B4A5D006451C7 /* MyHDPLUS-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* MyHDPLUS-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -405,7 +406,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IptvTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MyHDPLUSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -427,7 +428,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Iptv-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MyHDPLUS-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -449,7 +450,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Iptv-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MyHDPLUS-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -471,7 +472,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Iptv-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MyHDPLUS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -523,7 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* IptvTests.m in Sources */,
+				00E356F31AD99517003FC87E /* MyHDPLUSTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* IptvTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* MyHDPLUSTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,12 +559,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* Iptv */;
+			target = 13B07F861A680F5B00A75B9A /* MyHDPLUS */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* Iptv-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* MyHDPLUS-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -575,7 +576,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = Iptv;
+			path = MyHDPLUS;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -583,14 +584,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5709A615DC364C6C8EFF508 /* Pods-IptvTests.debug.xcconfig */;
+			baseConfigurationReference = E5709A615DC364C6C8EFF508 /* Pods-MyHDPLUSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = IptvTests/Info.plist;
+				INFOPLIST_FILE = MyHDPLUSTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -600,17 +601,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Iptv.app/Iptv";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyHDPLUS.app/MyHDPLUS";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F88395039ECD4D3D173032C /* Pods-IptvTests.release.xcconfig */;
+			baseConfigurationReference = 6F88395039ECD4D3D173032C /* Pods-MyHDPLUSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = IptvTests/Info.plist;
+				INFOPLIST_FILE = MyHDPLUSTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -620,54 +621,62 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Iptv.app/Iptv";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyHDPLUS.app/MyHDPLUS";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78B8F16E76A2E06551C7DF7D /* Pods-Iptv.debug.xcconfig */;
+			baseConfigurationReference = 78B8F16E76A2E06551C7DF7D /* Pods-MyHDPLUS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = A4W39LTCG9;
-				INFOPLIST_FILE = Iptv/Info.plist;
+				DEVELOPMENT_TEAM = UQNPBUSJ9R;
+				INFOPLIST_FILE = MyHDPLUS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.gibfibre;
-				PRODUCT_NAME = Iptv;
+				PRODUCT_BUNDLE_IDENTIFIER = in.smartiptv;
+				PRODUCT_NAME = MyHDPLUS;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2430CAF93369D41F5785811 /* Pods-Iptv.release.xcconfig */;
+			baseConfigurationReference = C2430CAF93369D41F5785811 /* Pods-MyHDPLUS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = A4W39LTCG9;
-				INFOPLIST_FILE = Iptv/Info.plist;
+				DEVELOPMENT_TEAM = UQNPBUSJ9R;
+				INFOPLIST_FILE = MyHDPLUS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.gibfibre;
-				PRODUCT_NAME = Iptv;
+				PRODUCT_BUNDLE_IDENTIFIER = in.smartiptv;
+				PRODUCT_NAME = MyHDPLUS;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DD62C5D34674128F54B3872 /* Pods-Iptv-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 4DD62C5D34674128F54B3872 /* Pods-MyHDPLUS-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -678,14 +687,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Iptv-tvOS/Info.plist";
+				INFOPLIST_FILE = "MyHDPLUS-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Iptv-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.MyHDPLUS-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -695,7 +704,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDCB94B8B0356B136758F7E4 /* Pods-Iptv-tvOS.release.xcconfig */;
+			baseConfigurationReference = BDCB94B8B0356B136758F7E4 /* Pods-MyHDPLUS-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -706,14 +715,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Iptv-tvOS/Info.plist";
+				INFOPLIST_FILE = "MyHDPLUS-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Iptv-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.MyHDPLUS-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -723,7 +732,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C04E90E547FE7C78B0EC4C57 /* Pods-Iptv-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = C04E90E547FE7C78B0EC4C57 /* Pods-MyHDPLUS-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -733,24 +742,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Iptv-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "MyHDPLUS-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Iptv-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.MyHDPLUS-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Iptv-tvOS.app/Iptv-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyHDPLUS-tvOS.app/MyHDPLUS-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4728DFAB173EE3A944280894 /* Pods-Iptv-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 4728DFAB173EE3A944280894 /* Pods-MyHDPLUS-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -760,17 +769,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Iptv-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "MyHDPLUS-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Iptv-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.MyHDPLUS-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Iptv-tvOS.app/Iptv-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyHDPLUS-tvOS.app/MyHDPLUS-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -877,7 +886,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "IptvTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "MyHDPLUSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -886,7 +895,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Iptv" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "MyHDPLUS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -895,7 +904,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Iptv-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "MyHDPLUS-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -904,7 +913,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Iptv-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "MyHDPLUS-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -913,7 +922,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Iptv" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "MyHDPLUS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

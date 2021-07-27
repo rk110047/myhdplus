@@ -74,6 +74,7 @@ class VideoOnDemand extends Component {
         }
       }
     render() {
+      console.log("121",this.props.categories)
         return (
             <BaseScreen logo={true} search={true}>
                <Dialog.Container
@@ -107,8 +108,8 @@ class VideoOnDemand extends Component {
                 >
                   <ImageBackground
                   resizeMode='stretch'
-                  style={{width:width*0.85,height:150,marginVertical:2}}
-                  source={{uri:item.background_image?item.background_image:"http://185.94.77.114/media/Entertainment-icon_YS9b7IX.png"}}
+                  style={{width:width*0.85,height:height*0.25,marginVertical:10, elevation:3}}
+                  source={{uri:item.background_image}}
                   />
                 </TouchableOpacity>)
               }}
